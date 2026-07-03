@@ -79,6 +79,15 @@ html.theme-light body::before {
     linear-gradient(180deg, #f8f5ef, #eef3f4 60%, #f6f3ed);
 }
 
+html.theme-light .site-header,
+html.theme-light .site-header.scrolled {
+  background: rgba(248, 245, 239, 0.88) !important;
+  border-bottom-color: rgba(28, 39, 48, 0.12) !important;
+  box-shadow: 0 8px 24px rgba(44, 55, 62, 0.08);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+}
+
 html.theme-light .main-nav a {
   color: #53616b;
 }
