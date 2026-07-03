@@ -1,7 +1,7 @@
 /* Language switcher */
 .language-switcher {
   position: absolute;
-  z-index: 3;
+  z-index: 50;
   top: 50%;
   right: 168px;
   display: inline-flex;
@@ -21,7 +21,7 @@
 .language-switcher a {
   color: var(--muted);
   text-decoration: none;
-  transition: color .2s;
+  transition: color .2s, border-color .2s, background .2s, transform .2s, opacity .2s;
 }
 
 .language-switcher a:hover {
@@ -30,11 +30,86 @@
 
 .language-switcher a[aria-current="page"] {
   color: var(--text);
-  pointer-events: none;
 }
 
 .language-switcher__divider {
   opacity: .45;
+}
+
+/* The dropdown layout is enabled by JavaScript. The inline version remains a fallback. */
+.language-switcher.is-ready {
+  display: block;
+  min-width: 66px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.language-switcher.is-ready .language-switcher__divider {
+  display: none;
+}
+
+.language-switcher.is-ready a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--panel);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+.language-switcher.is-ready a[aria-current="page"]::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-left: 9px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform .2s;
+}
+
+.language-switcher.is-ready.is-open a[aria-current="page"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.language-switcher.is-ready.is-open a[aria-current="page"]::after {
+  transform: translateY(1px) rotate(225deg);
+}
+
+.language-switcher.is-ready a:not([aria-current="page"]) {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+}
+
+.language-switcher.is-ready.is-open a:not([aria-current="page"]) {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.language-switcher.is-ready a:not([aria-current="page"]):hover {
+  border-color: var(--accent);
+  background: rgba(255, 156, 42, .08);
+  color: var(--accent);
+}
+
+.language-switcher a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 html[lang="en"] .bubi-gallery-item::after {
@@ -120,7 +195,12 @@ html[lang="en"] .bubi-gallery-item::after {
   .language-switcher,
   .bubi-page .language-switcher {
     right: 94px;
-    padding: 7px 8px;
+  }
+
+  .language-switcher.is-ready a {
+    min-height: 36px;
+    padding: 0 10px;
+    border-radius: 10px;
   }
 
   html.theme-light .main-nav {
