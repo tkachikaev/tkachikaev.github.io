@@ -125,8 +125,8 @@ function setupCampfireBanner() {
   if (!image) return;
 
   loadStylesheet("css/campfire.css");
-  image.src = "assets/gallery/warm-forest.jpg";
-  image.alt = "Лесной игровой мир";
+  image.src = "assets/gallery/downimage.jpg";
+  image.alt = "Игровой мир";
 
   const media = document.createElement("div");
   media.className = "campfire-media";
