@@ -59,6 +59,15 @@ html.theme-light .theme-toggle .theme-icon-moon {
   display: block;
 }
 
+.site-header,
+.site-header.scrolled {
+  background: rgba(18, 26, 35, 0.88) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+}
+
 html.theme-light body {
   --bg: #f6f3ed;
   --bg2: #ffffff;
