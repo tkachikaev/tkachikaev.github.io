@@ -37,6 +37,10 @@
   opacity: .45;
 }
 
+html[lang="en"] .bubi-gallery-item::after {
+  content: "Open";
+}
+
 .bubi-page .theme-toggle {
   right: 58px;
 }
