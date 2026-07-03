@@ -1,0 +1,56 @@
+name: Rasterize gallery art
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/rasterize-gallery.yml"
+      - "assets/gallery/*.svg"
+      - "js/main.js"
+
+permissions:
+  contents: write
+
+jobs:
+  rasterize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install image tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq librsvg2-bin imagemagick
+
+      - name: Create JPG gallery art
+        run: |
+          set -euo pipefail
+
+          for name in topimage bubi signal-bloom cloudline-courier tiny-orbit; do
+            rsvg-convert "assets/gallery/${name}.svg" -w 960 -h 636 -o "/tmp/${name}.png"
+            convert "/tmp/${name}.png" -strip -quality 88 "assets/gallery/${name}.jpg"
+          done
+
+          sed -i \
+            -e 's#assets/gallery/topimage\.svg#assets/gallery/topimage.jpg#g' \
+            -e 's#assets/gallery/bubi\.svg#assets/gallery/bubi.jpg#g' \
+            -e 's#assets/gallery/signal-bloom\.svg#assets/gallery/signal-bloom.jpg#g' \
+            -e 's#assets/gallery/cloudline-courier\.svg#assets/gallery/cloudline-courier.jpg#g' \
+            -e 's#assets/gallery/tiny-orbit\.svg#assets/gallery/tiny-orbit.jpg#g' \
+            js/main.js
+
+          rm .github/workflows/rasterize-gallery.yml
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/gallery/*.jpg js/main.js .github/workflows/rasterize-gallery.yml
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Replace gallery SVG art with JPG"
+            git push
+          fi
