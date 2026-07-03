@@ -1,281 +1,86 @@
 const header = document.querySelector(".site-header");
-const bar = document.querySelector(".progress span");
-const toggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".main-nav");
-const navLinks = [...document.querySelectorAll(".main-nav a")];
+const progressBar = document.querySelector(".progress span");
+const menuToggle = document.querySelector(".menu-toggle");
+const navigation = document.querySelector(".main-nav");
+const navigationLinks = [...document.querySelectorAll(".main-nav a")];
+const themeToggle = document.querySelector(".theme-toggle");
+const themeKey = "site-theme";
 
-function loadStylesheet(href) {
-  if (document.querySelector(`link[href="${href}"]`)) return;
+function applyTheme(theme, save = false) {
+  const isLight = theme === "light";
 
-  const stylesheet = document.createElement("link");
-  stylesheet.rel = "stylesheet";
-  stylesheet.href = href;
-  document.head.append(stylesheet);
-}
+  document.documentElement.classList.toggle("theme-light", isLight);
+  document.documentElement.style.colorScheme = isLight ? "light" : "dark";
 
-function updateProjectCard(card, project) {
-  const image = card.querySelector("img");
-  const info = card.querySelector(".project-info");
-
-  if (!image || !info) return;
-
-  image.src = project.image;
-  image.alt = project.alt;
-
-  const title = document.createElement("h3");
-  title.textContent = project.title;
-
-  const description = document.createElement("p");
-  description.textContent = project.description;
-
-  const status = document.createElement("span");
-  status.className = `status${project.statusClass ? ` ${project.statusClass}` : ""}`;
-  status.textContent = project.status;
-
-  info.replaceChildren(title, description, status);
-}
-
-function setupSiteContent() {
-  const heroImage = document.querySelector(".hero-art img");
-  if (heroImage) {
-    heroImage.src = "assets/gallery/topimage.jpg";
-    heroImage.alt = "Игровой лесной мир";
-  }
-
-  const projects = [
-    {
-      title: "Bubi",
-      description: "2D-платформер. В разработке.",
-      status: "В разработке",
-      statusClass: "yellow",
-      image: "assets/gallery/bubi.jpg",
-      alt: "Bubi — зелёная птица в лесном мире"
-    },
-    {
-      title: "Desert Ruins",
-      description: "Исследование, загадки, секреты.",
-      status: "Идея",
-      statusClass: "blue",
-      image: "assets/gallery/red-sands.jpg",
-      alt: "Пустынный мир"
-    },
-    {
-      title: "Star Drift",
-      description: "Аркадный шутер в космосе.",
-      status: "Концепт",
-      statusClass: "purple",
-      image: "assets/gallery/deep-night.jpg",
-      alt: "Космический мир"
-    },
-    {
-      title: "Forest Quest",
-      description: "Лесное приключение с тайными тропами.",
-      status: "Прототип",
-      statusClass: "",
-      image: "assets/gallery/warm-forest.jpg",
-      alt: "Лесной мир"
-    },
-    {
-      title: "Signal Bloom",
-      description: "Светящийся сад и древние механизмы.",
-      status: "Концепт",
-      statusClass: "purple",
-      image: "assets/gallery/signal-bloom.jpg",
-      alt: "Светящийся сад"
-    },
-    {
-      title: "Cloudline Courier",
-      description: "Небесные острова и воздушная доставка.",
-      status: "Идея",
-      statusClass: "",
-      image: "assets/gallery/cloudline-courier.jpg",
-      alt: "Воздушный курьер в облаках"
-    },
-    {
-      title: "Tiny Orbit",
-      description: "Карманные планеты, прыжки и орбиты.",
-      status: "Идея",
-      statusClass: "blue",
-      image: "assets/gallery/tiny-orbit.jpg",
-      alt: "Маленькая планета в космосе"
-    }
-  ];
-
-  document
-    .querySelectorAll(".projects-grid .project-card")
-    .forEach((card, index) => {
-      if (projects[index]) updateProjectCard(card, projects[index]);
-    });
-
-  document.querySelector(".section-heading .desktop-only")?.remove();
-
-  const emailLink = document.querySelector('.header-links a[href^="mailto:"]');
-  if (emailLink) {
-    emailLink.href = "mailto:tkachikaev@gmail.com";
-    emailLink.title = "Написать письмо";
-    emailLink.setAttribute("aria-label", "Написать письмо на tkachikaev@gmail.com");
-  }
-}
-
-function setupCampfireBanner() {
-  const banner = document.querySelector(".campfire-banner");
-  if (!banner || banner.dataset.layoutReady === "true") return;
-
-  const image = banner.querySelector("img");
-  if (!image) return;
-
-  loadStylesheet("css/campfire.css");
-  image.src = "assets/gallery/downimage.jpg";
-  image.alt = "Игровой мир";
-
-  const media = document.createElement("div");
-  media.className = "campfire-media";
-  media.append(image);
-
-  const copy = document.createElement("figcaption");
-  copy.className = "campfire-copy";
-  copy.innerHTML = `
-    <svg class="campfire-heart" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 20.2 4.55 12.9a4.62 4.62 0 0 1 0-6.56 4.79 4.79 0 0 1 6.69 0L12 7.09l.76-.75a4.79 4.79 0 0 1 6.69 0 4.62 4.62 0 0 1 0 6.56Z" />
-    </svg>
-    <blockquote>
-      <p>Я не делаю игры, чтобы кому-то что-то доказать.</p>
-      <p>Я делаю их, потому что не могу иначе.</p>
-    </blockquote>
-  `;
-
-  banner.replaceChildren(media, copy);
-  banner.dataset.layoutReady = "true";
-}
-
-function setupHeroStatusLabel() {
-  const label = document.querySelector(".hero-art figcaption");
-  if (!label) return;
-
-  const isCompact = window.matchMedia("(max-width: 680px)").matches;
-  const isLight = document.documentElement.classList.contains("theme-light");
-
-  Object.assign(label.style, {
-    position: "absolute",
-    top: isCompact ? "12px" : "16px",
-    left: isCompact ? "12px" : "16px",
-    zIndex: "2",
-    margin: "0",
-    padding: isCompact ? "7px 10px" : "8px 12px",
-    border: `1px solid ${isLight ? "rgba(255, 255, 255, 0.62)" : "rgba(255, 255, 255, 0.16)"}`,
-    borderRadius: "999px",
-    background: isLight ? "rgba(255, 255, 255, 0.58)" : "rgba(8, 12, 16, 0.56)",
-    color: isLight ? "#53616b" : "#e3e7ea",
-    boxShadow: isLight
-      ? "0 8px 20px rgba(44, 55, 62, 0.12)"
-      : "0 8px 20px rgba(0, 0, 0, 0.18)",
-    backdropFilter: "blur(12px) saturate(130%)"
-  });
-
-  label.style.setProperty("-webkit-backdrop-filter", "blur(12px) saturate(130%)");
-  label.querySelector("i")?.style.setProperty("flex", "0 0 auto");
-}
-
-function setupThemeToggle() {
-  const headerInner = document.querySelector(".header-inner");
-  if (!headerInner || document.querySelector(".theme-toggle")) return;
-
-  loadStylesheet("css/theme.css");
-  loadStylesheet("css/campfire-glass.css");
-  loadStylesheet("css/hero-label.css");
-
-  const themeKey = "site-theme";
-  const button = document.createElement("button");
-  button.className = "theme-toggle";
-  button.type = "button";
-  button.innerHTML = `
-    <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="4"></circle>
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-    </svg>
-    <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M20.1 15.2A8.5 8.5 0 0 1 8.8 3.9 8.5 8.5 0 1 0 20.1 15.2Z"></path>
-    </svg>
-  `;
-
-  const applyTheme = (theme, save = false) => {
-    const isLight = theme === "light";
-    document.documentElement.classList.toggle("theme-light", isLight);
-    document.documentElement.style.colorScheme = isLight ? "light" : "dark";
-    button.setAttribute("aria-pressed", String(isLight));
-    button.setAttribute(
+  if (themeToggle) {
+    themeToggle.setAttribute("aria-pressed", String(isLight));
+    themeToggle.setAttribute(
       "aria-label",
       isLight ? "Включить тёмную тему" : "Включить светлую тему"
     );
-    button.title = isLight ? "Тёмная тема" : "Светлая тема";
-    setupHeroStatusLabel();
-
-    if (save) {
-      try {
-        localStorage.setItem(themeKey, theme);
-      } catch {
-        // Сайт продолжит работать, даже если браузер блокирует localStorage.
-      }
-    }
-  };
-
-  let savedTheme = "dark";
-  try {
-    savedTheme = localStorage.getItem(themeKey) || "dark";
-  } catch {
-    // По умолчанию сайт остаётся в текущей тёмной теме.
+    themeToggle.title = isLight ? "Тёмная тема" : "Светлая тема";
   }
 
-  headerInner.append(button);
-  applyTheme(savedTheme);
-
-  button.addEventListener("click", () => {
-    const nextTheme = document.documentElement.classList.contains("theme-light")
-      ? "dark"
-      : "light";
-
-    applyTheme(nextTheme, true);
-  });
+  if (save) {
+    try {
+      localStorage.setItem(themeKey, theme);
+    } catch {
+      // Сайт продолжит работать, даже если браузер блокирует localStorage.
+    }
+  }
 }
 
-setupSiteContent();
-setupCampfireBanner();
-setupThemeToggle();
-setupHeroStatusLabel();
-window.addEventListener("resize", setupHeroStatusLabel, { passive: true });
+try {
+  applyTheme(localStorage.getItem(themeKey) || "dark");
+} catch {
+  applyTheme("dark");
+}
+
+themeToggle?.addEventListener("click", () => {
+  const nextTheme = document.documentElement.classList.contains("theme-light")
+    ? "dark"
+    : "light";
+
+  applyTheme(nextTheme, true);
+});
 
 function handleScroll() {
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  bar.style.width = `${max ? (window.scrollY / max) * 100 : 0}%`;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = `${maxScroll ? (window.scrollY / maxScroll) * 100 : 0}%`;
   header.classList.toggle("scrolled", window.scrollY > 10);
 }
+
 handleScroll();
 window.addEventListener("scroll", handleScroll, { passive: true });
 
-toggle?.addEventListener("click", () => {
-  toggle.classList.toggle("open");
-  nav.classList.toggle("open");
-  toggle.setAttribute("aria-expanded", String(nav.classList.contains("open")));
+menuToggle?.addEventListener("click", () => {
+  const isOpen = navigation.classList.toggle("open");
+
+  menuToggle.classList.toggle("open", isOpen);
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
 });
-navLinks.forEach(link => link.addEventListener("click", () => {
-  toggle?.classList.remove("open");
-  nav.classList.remove("open");
-  toggle?.setAttribute("aria-expanded", "false");
+
+navigationLinks.forEach(link => link.addEventListener("click", () => {
+  menuToggle?.classList.remove("open");
+  navigation.classList.remove("open");
+  menuToggle?.setAttribute("aria-expanded", "false");
+  menuToggle?.setAttribute("aria-label", "Открыть меню");
 }));
 
 const sections = [...document.querySelectorAll("main section[id]")];
 
 const menuObserver = new IntersectionObserver((entries) => {
-  const visible = entries
+  const visibleSection = entries
     .filter(entry => entry.isIntersecting)
     .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-  if (!visible) return;
+  if (!visibleSection) return;
 
-  navLinks.forEach(link => {
+  navigationLinks.forEach(link => {
     link.classList.toggle(
       "active",
-      link.getAttribute("href") === `#${visible.target.id}`
+      link.getAttribute("href") === `#${visibleSection.target.id}`
     );
   });
 }, {
@@ -285,14 +90,14 @@ const menuObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(section => menuObserver.observe(section));
 
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("in");
-      observer.unobserve(entry.target);
-    }
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.add("in");
+    revealObserver.unobserve(entry.target);
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll(".reveal").forEach(item => observer.observe(item));
+document.querySelectorAll(".reveal").forEach(item => revealObserver.observe(item));
 document.getElementById("year").textContent = new Date().getFullYear();
