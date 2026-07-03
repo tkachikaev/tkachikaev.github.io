@@ -50,6 +50,7 @@ function setupThemeToggle() {
 
   loadStylesheet("css/theme.css");
   loadStylesheet("css/campfire-glass.css");
+  loadStylesheet("css/hero-label.css");
 
   const themeKey = "site-theme";
   const button = document.createElement("button");

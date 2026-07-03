@@ -1,0 +1,35 @@
+/* Hero image status label */
+.hero-art figcaption {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(8, 12, 16, 0.56);
+  color: #e3e7ea;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
+}
+
+.hero-art figcaption i {
+  flex: 0 0 auto;
+}
+
+html.theme-light .hero-art figcaption {
+  border-color: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.58);
+  color: #53616b;
+  box-shadow: 0 8px 20px rgba(44, 55, 62, 0.12);
+}
+
+@media (max-width: 680px) {
+  .hero-art figcaption {
+    top: 12px;
+    left: 12px;
+    padding: 7px 10px;
+  }
+}
