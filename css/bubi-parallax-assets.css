@@ -1,0 +1,60 @@
+/* Supplied Bubi game layers, injected by bubi-parallax.js */
+.bubi-parallax.has-game-clouds {
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer {
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+.bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer--far {
+  top: 16%;
+  height: 54px;
+  background-size: 146px 40px;
+  animation: bubi-game-cloud-far 76s linear infinite;
+}
+
+.bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer--mid {
+  top: 35%;
+  height: 82px;
+  background-size: 470px 74px;
+  animation: bubi-game-cloud-mid 57s linear infinite;
+}
+
+.bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer--front {
+  top: 53%;
+  height: 148px;
+  background-size: 300px 150px;
+  animation: bubi-game-cloud-front 38s linear infinite;
+}
+
+.bubi-parallax.has-game-clouds .bubi-parallax__cloud-track {
+  display: none;
+}
+
+@keyframes bubi-game-cloud-far {
+  to { background-position-x: -146px; }
+}
+
+@keyframes bubi-game-cloud-mid {
+  to { background-position-x: -470px; }
+}
+
+@keyframes bubi-game-cloud-front {
+  to { background-position-x: -300px; }
+}
+
+@media (max-width: 680px) {
+  .bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer--far { top: 14%; }
+  .bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer--mid { top: 34%; }
+  .bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer--front { top: 49%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer {
+    animation: none !important;
+  }
+}
