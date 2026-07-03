@@ -1,3 +1,34 @@
+const parallaxScene = document.querySelector(".bubi-parallax");
+
+if (parallaxScene) {
+  const loadStyle = href => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+    document.head.append(link);
+  };
+
+  const loadScript = src => new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.append(script);
+  });
+
+  loadStyle("css/bubi-parallax-assets.css?v=1");
+
+  Promise.all([
+    loadScript("js/bubi-parallax-sky.js?v=1"),
+    loadScript("js/bubi-parallax-far.js?v=1"),
+    loadScript("js/bubi-parallax-mid.js?v=1"),
+    loadScript("js/bubi-parallax-front.js?v=1")
+  ]).then(() => loadScript("js/bubi-parallax.js?v=1")).catch(() => {
+    // CSS fallback remains visible if a game layer fails to load.
+  });
+}
+
 const galleryItems = [...document.querySelectorAll(".bubi-gallery-item")];
 const lightbox = document.querySelector(".gallery-lightbox");
 
