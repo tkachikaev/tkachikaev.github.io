@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Личная страница независимого разработчика игр: Bubi, прототипы и игровые миры.">
+  <meta name="color-scheme" content="light dark">
   <title>Тимка пипимка — делаю игры, какие хочу</title>
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -11,14 +12,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/style.css?v=6">
-  <link rel="stylesheet" href="css/theme.css?v=6">
+  <link rel="stylesheet" href="css/theme.css?v=7">
   <link rel="stylesheet" href="css/bubi.css?v=1">
-  <link rel="stylesheet" href="css/language.css?v=1">
+  <link rel="stylesheet" href="css/language.css?v=2">
 
   <script>
     try {
       if (localStorage.getItem("site-theme") === "light") {
         document.documentElement.classList.add("theme-light");
+        document.documentElement.style.colorScheme = "light";
       }
     } catch {}
   </script>
@@ -226,6 +228,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=6"></script>
+  <script src="js/main.js?v=7"></script>
 </body>
 </html>
