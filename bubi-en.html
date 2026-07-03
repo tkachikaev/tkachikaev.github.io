@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bubi is a 2D platformer about a green bird. Game in development.">
+  <title>Bubi — game in development</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/theme.css?v=6">
+  <link rel="stylesheet" href="css/bubi.css?v=1">
+  <link rel="stylesheet" href="css/language.css?v=1">
+  <script>
+    try {
+      if (localStorage.getItem("site-theme") === "light") document.documentElement.classList.add("theme-light");
+    } catch {}
+  </script>
+</head>
+<body class="bubi-page">
+  <div class="noise" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="en.html#top" aria-label="Home">T<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="en.html#top">Home</a>
+        <a href="en.html#about">About</a>
+        <a href="en.html#projects">Projects</a>
+        <a href="en.html#contact">Contact</a>
+      </nav>
+      <nav class="language-switcher" aria-label="Language selection">
+        <a href="bubi.html" lang="ru" hreflang="ru">RU</a>
+        <span class="language-switcher__divider" aria-hidden="true">/</span>
+        <a href="bubi-en.html" lang="en" hreflang="en" aria-current="page">EN</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Enable light theme" aria-pressed="false" title="Light theme"><span aria-hidden="true">◐</span></button>
+      <div class="header-links"><a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">GH</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="bubi">
+      <div class="container">
+        <a class="bubi-back" href="en.html#projects">← All projects</a>
+        <div class="bubi-hero-grid">
+          <div class="reveal">
+            <p class="eyebrow">BUBI · IN DEVELOPMENT</p>
+            <h1 class="bubi-title">B<span>u</span>bi</h1>
+            <p class="bubi-summary">A bright 2D platformer about a green bird that travels through game worlds, searches for secrets and learns to handle whatever lies ahead.</p>
+            <div class="bubi-status-row" aria-label="Project status">
+              <span class="bubi-status">Forest world</span>
+              <span class="bubi-status">Unity 2D</span>
+              <span class="bubi-status">PC</span>
+            </div>
+          </div>
+          <figure class="bubi-cover reveal delay-1">
+            <img src="assets/gallery/bubi.jpg" alt="Bubi in a forest game world" fetchpriority="high" decoding="async">
+            <figcaption>First game world</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="bubi-section bubi-section--surface" id="about-game">
+      <div class="container">
+        <div class="bubi-section-heading reveal">
+          <div>
+            <p class="eyebrow">ABOUT THE PROJECT</p>
+            <h2 class="bubi-section-title">A game I want to play myself.</h2>
+          </div>
+        </div>
+        <div class="bubi-about-grid">
+          <p class="bubi-about-copy reveal">Bubi is taking shape as a warm and approachable adventure: not overly complex, but full of movement, exploration, hidden paths and worlds worth returning to. The forest is the foundation right now; ancient ruins, a desert and space levels will follow.</p>
+          <ul class="bubi-points reveal delay-1">
+            <li><i></i><span>Clean cartoon 2D style with bright, easy-to-read worlds.</span></li>
+            <li><i></i><span>Levels with secrets, alternate paths and small discoveries.</span></li>
+            <li><i></i><span>New mechanics will unfold alongside Bubi’s journey.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="bubi-section" id="mechanics">
+      <div class="container">
+        <div class="bubi-section-heading reveal">
+          <div>
+            <p class="eyebrow">GAMEPLAY FOUNDATION</p>
+            <h2 class="bubi-section-title">Three things Bubi is built around.</h2>
+          </div>
+          <p>The core mechanics already set the rhythm: easy to start, satisfying to move through, and fun to explore for the next path.</p>
+        </div>
+        <div class="bubi-mechanics">
+          <article class="bubi-mechanic reveal"><span class="bubi-mechanic-number">01</span><h3>Movement and jumping</h3><p>Responsive controls, a double jump and air control form the foundation for exploring each level.</p></article>
+          <article class="bubi-mechanic reveal delay-1"><span class="bubi-mechanic-number">02</span><h3>Egg projectile</h3><p>Bubi’s main ranged attack: it deals with enemies and leaves room for future gameplay ideas.</p></article>
+          <article class="bubi-mechanic reveal delay-2"><span class="bubi-mechanic-number">03</span><h3>Worlds and secrets</h3><p>Forest, ruins, desert and space will differ not only visually, but also in their pace and gameplay.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bubi-section bubi-section--surface" id="gallery">
+      <div class="container">
+        <div class="bubi-section-heading reveal">
+          <div>
+            <p class="eyebrow">GALLERY</p>
+            <h2 class="bubi-section-title">Worlds, mood and visual sketches.</h2>
+          </div>
+          <p>Click an image to open it large. The gallery will grow as development continues.</p>
+        </div>
+        <div class="bubi-gallery" aria-label="Bubi project gallery">
+          <button class="bubi-gallery-item reveal" type="button" data-full="assets/gallery/bubi.jpg" data-caption="Bubi in a forest game world" aria-label="Open: Bubi in a forest game world"><img src="assets/gallery/bubi.jpg" alt="Bubi in a forest game world" loading="lazy" decoding="async"></button>
+          <button class="bubi-gallery-item reveal delay-1" type="button" data-full="assets/gallery/warm-forest.jpg" data-caption="A warm forest location and the direction for the first world" aria-label="Open: warm forest location"><img src="assets/gallery/warm-forest.jpg" alt="Warm forest location" loading="lazy" decoding="async"></button>
+          <button class="bubi-gallery-item reveal delay-2" type="button" data-full="assets/gallery/red-sands.jpg" data-caption="A sketch for Bubi’s desert world" aria-label="Open: desert world sketch"><img src="assets/gallery/red-sands.jpg" alt="Desert world sketch" loading="lazy" decoding="async"></button>
+          <button class="bubi-gallery-item reveal" type="button" data-full="assets/gallery/deep-night.jpg" data-caption="The mood of a future space world" aria-label="Open: space world mood"><img src="assets/gallery/deep-night.jpg" alt="Space world mood" loading="lazy" decoding="async"></button>
+          <button class="bubi-gallery-item reveal delay-1" type="button" data-full="assets/gallery/campfire-forest-v1.jpg" data-caption="Night forest — a mood reference for Bubi" aria-label="Open: night forest"><img src="assets/gallery/campfire-forest-v1.jpg" alt="Night-time game forest" loading="lazy" decoding="async"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> · Made with love for games</p>
+      <div class="footer-links"><a href="en.html#projects">All projects</a><a href="#bubi">Top ↑</a></div>
+    </div>
+  </footer>
+
+  <dialog class="gallery-lightbox" aria-label="Full screen gallery viewer">
+    <div class="gallery-lightbox__shell">
+      <button class="gallery-lightbox__close" type="button" aria-label="Close gallery" data-lightbox-close>×</button>
+      <button class="gallery-lightbox__button gallery-lightbox__button--prev" type="button" aria-label="Previous image" data-lightbox-prev>‹</button>
+      <button class="gallery-lightbox__button gallery-lightbox__button--next" type="button" aria-label="Next image" data-lightbox-next>›</button>
+      <img class="gallery-lightbox__image" src="" alt="">
+      <p class="gallery-lightbox__caption"></p>
+    </div>
+  </dialog>
+
+  <script src="js/main.js?v=6"></script>
+  <script src="js/bubi.js?v=1"></script>
+</body>
+</html>
