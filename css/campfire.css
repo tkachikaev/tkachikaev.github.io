@@ -33,7 +33,7 @@
   min-height: 0;
   max-height: none;
   object-fit: cover;
-  object-position: 100% center;
+  object-position: center center;
   filter: saturate(0.9) contrast(1.04);
 }
 
