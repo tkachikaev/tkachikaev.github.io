@@ -44,6 +44,34 @@ function setupCampfireBanner() {
   banner.dataset.layoutReady = "true";
 }
 
+function setupHeroStatusLabel() {
+  const label = document.querySelector(".hero-art figcaption");
+  if (!label) return;
+
+  const isCompact = window.matchMedia("(max-width: 680px)").matches;
+  const isLight = document.documentElement.classList.contains("theme-light");
+
+  Object.assign(label.style, {
+    position: "absolute",
+    top: isCompact ? "12px" : "16px",
+    left: isCompact ? "12px" : "16px",
+    zIndex: "2",
+    margin: "0",
+    padding: isCompact ? "7px 10px" : "8px 12px",
+    border: `1px solid ${isLight ? "rgba(255, 255, 255, 0.62)" : "rgba(255, 255, 255, 0.16)"}`,
+    borderRadius: "999px",
+    background: isLight ? "rgba(255, 255, 255, 0.58)" : "rgba(8, 12, 16, 0.56)",
+    color: isLight ? "#53616b" : "#e3e7ea",
+    boxShadow: isLight
+      ? "0 8px 20px rgba(44, 55, 62, 0.12)"
+      : "0 8px 20px rgba(0, 0, 0, 0.18)",
+    backdropFilter: "blur(12px) saturate(130%)"
+  });
+
+  label.style.setProperty("-webkit-backdrop-filter", "blur(12px) saturate(130%)");
+  label.querySelector("i")?.style.setProperty("flex", "0 0 auto");
+}
+
 function setupThemeToggle() {
   const headerInner = document.querySelector(".header-inner");
   if (!headerInner || document.querySelector(".theme-toggle")) return;
@@ -76,6 +104,7 @@ function setupThemeToggle() {
       isLight ? "Включить тёмную тему" : "Включить светлую тему"
     );
     button.title = isLight ? "Тёмная тема" : "Светлая тема";
+    setupHeroStatusLabel();
 
     if (save) {
       try {
@@ -107,6 +136,8 @@ function setupThemeToggle() {
 
 setupCampfireBanner();
 setupThemeToggle();
+setupHeroStatusLabel();
+window.addEventListener("resize", setupHeroStatusLabel, { passive: true });
 
 function handleScroll() {
   const max = document.documentElement.scrollHeight - window.innerHeight;
