@@ -4,7 +4,9 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".main-nav");
 const navigationLinks = [...document.querySelectorAll(".main-nav a")];
 const themeToggle = document.querySelector(".theme-toggle");
+const year = document.getElementById("year");
 const themeKey = "site-theme";
+const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
 function applyTheme(theme, save = false) {
   const isLight = theme === "light";
@@ -14,10 +16,7 @@ function applyTheme(theme, save = false) {
 
   if (themeToggle) {
     themeToggle.setAttribute("aria-pressed", String(isLight));
-    themeToggle.setAttribute(
-      "aria-label",
-      isLight ? "Включить тёмную тему" : "Включить светлую тему"
-    );
+    themeToggle.setAttribute("aria-label", isLight ? "Включить тёмную тему" : "Включить светлую тему");
     themeToggle.title = isLight ? "Тёмная тема" : "Светлая тема";
   }
 
@@ -37,67 +36,105 @@ try {
 }
 
 themeToggle?.addEventListener("click", () => {
-  const nextTheme = document.documentElement.classList.contains("theme-light")
-    ? "dark"
-    : "light";
-
-  applyTheme(nextTheme, true);
+  applyTheme(document.documentElement.classList.contains("theme-light") ? "dark" : "light", true);
 });
 
-function handleScroll() {
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  progressBar.style.width = `${maxScroll ? (window.scrollY / maxScroll) * 100 : 0}%`;
-  header.classList.toggle("scrolled", window.scrollY > 10);
+function closeMenu() {
+  if (!navigation || !menuToggle) return;
+
+  navigation.classList.remove("open");
+  menuToggle.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Открыть меню");
 }
 
-handleScroll();
-window.addEventListener("scroll", handleScroll, { passive: true });
-
 menuToggle?.addEventListener("click", () => {
-  const isOpen = navigation.classList.toggle("open");
+  if (!navigation) return;
 
+  const isOpen = navigation.classList.toggle("open");
   menuToggle.classList.toggle("open", isOpen);
   menuToggle.setAttribute("aria-expanded", String(isOpen));
   menuToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
 });
 
-navigationLinks.forEach(link => link.addEventListener("click", () => {
-  menuToggle?.classList.remove("open");
-  navigation.classList.remove("open");
-  menuToggle?.setAttribute("aria-expanded", "false");
-  menuToggle?.setAttribute("aria-label", "Открыть меню");
-}));
+navigationLinks.forEach(link => link.addEventListener("click", closeMenu));
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeMenu();
+});
+
+document.addEventListener("click", event => {
+  if (!navigation?.classList.contains("open")) return;
+  if (navigation.contains(event.target) || menuToggle?.contains(event.target)) return;
+  closeMenu();
+});
+
+let scrollFrame = 0;
+function updateScrollState() {
+  scrollFrame = 0;
+
+  if (header) {
+    header.classList.toggle("scrolled", window.scrollY > 10);
+  }
+
+  if (progressBar) {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = `${maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0}%`;
+  }
+}
+
+function requestScrollUpdate() {
+  if (!scrollFrame) {
+    scrollFrame = window.requestAnimationFrame(updateScrollState);
+  }
+}
+
+updateScrollState();
+window.addEventListener("scroll", requestScrollUpdate, { passive: true });
+window.addEventListener("resize", requestScrollUpdate, { passive: true });
 
 const sections = [...document.querySelectorAll("main section[id]")];
 
-const menuObserver = new IntersectionObserver((entries) => {
-  const visibleSection = entries
-    .filter(entry => entry.isIntersecting)
-    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+if ("IntersectionObserver" in window && sections.length && navigationLinks.length) {
+  const menuObserver = new IntersectionObserver(entries => {
+    const visibleSection = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-  if (!visibleSection) return;
+    if (!visibleSection) return;
 
-  navigationLinks.forEach(link => {
-    link.classList.toggle(
-      "active",
-      link.getAttribute("href") === `#${visibleSection.target.id}`
-    );
+    navigationLinks.forEach(link => {
+      const isActive = link.getAttribute("href") === `#${visibleSection.target.id}`;
+      link.classList.toggle("active", isActive);
+
+      if (isActive) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }, {
+    rootMargin: "-35% 0px -55% 0px",
+    threshold: 0
   });
-}, {
-  rootMargin: "-35% 0px -55% 0px",
-  threshold: 0
-});
 
-sections.forEach(section => menuObserver.observe(section));
+  sections.forEach(section => menuObserver.observe(section));
+}
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
+const revealItems = [...document.querySelectorAll(".reveal")];
 
-    entry.target.classList.add("in");
-    revealObserver.unobserve(entry.target);
-  });
-}, { threshold: 0.12 });
+if (!reduceMotion && "IntersectionObserver" in window) {
+  revealItems.forEach(item => item.classList.add("will-reveal"));
 
-document.querySelectorAll(".reveal").forEach(item => revealObserver.observe(item));
-document.getElementById("year").textContent = new Date().getFullYear();
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("in");
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+
+  revealItems.forEach(item => revealObserver.observe(item));
+}
+
+year?.append(String(new Date().getFullYear()));
