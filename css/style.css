@@ -42,3 +42,31 @@ footer{border-top:1px solid var(--line);padding:22px 0 28px;color:#7e8790;font-s
 
 @media(max-width:900px){.hero-grid{gap:40px}.projects-grid{grid-template-columns:repeat(2,1fr)}.project-card img{height:180px}.about-grid{gap:55px}.main-nav{gap:20px}}
 @media(max-width:680px){.container{width:min(100% - 32px,var(--max))}.site-header{position:sticky}.header-inner{height:72px;grid-template-columns:1fr auto}.brand{font-size:28px}.header-links{display:none}.menu-toggle{display:grid;gap:5px;background:none;border:0;padding:8px;cursor:pointer}.menu-toggle span{width:23px;height:1px;background:#fff;transition:.2s}.menu-toggle.open span:first-child{transform:translateY(3px) rotate(45deg)}.menu-toggle.open span:last-child{transform:translateY(-3px) rotate(-45deg)}.main-nav{position:absolute;left:0;right:0;top:72px;background:rgba(10,14,19,.97);padding:18px 24px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px;transform:translateY(-135%);opacity:0;pointer-events:none;transition:.25s}.main-nav.open{transform:none;opacity:1;pointer-events:auto}.main-nav a::after{display:none}.hero{padding:55px 0 46px}.hero-grid{grid-template-columns:1fr;gap:38px}.hero h1{font-size:52px}.hero-art{order:-1}.intro{font-size:15px}.scroll-hint{display:none}.projects-section{padding-top:48px}.section-heading{align-items:center}.desktop-only{display:none}.projects-grid{grid-template-columns:1fr 1fr;gap:24px 13px}.project-card img{height:130px}.project-info h3{font-size:14px}.project-info p{font-size:11px}.quote{gap:16px;padding:18px}.quote p{font-size:12px}.quote svg{display:none}.about-section{padding:70px 0}.about-grid{grid-template-columns:1fr;gap:31px}.about-image{max-width:260px}.about-copy h2{font-size:40px}.contact-card{padding:46px 18px}.footer-inner{align-items:flex-start;flex-direction:column}.hero-actions{gap:18px}.button{padding:14px 17px;gap:18px}.text-link{font-size:13px}.noise{opacity:.03}}
+
+.campfire-banner {
+  margin: 44px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #0d1218;
+}
+
+.campfire-banner img {
+  display: block;
+  width: 100%;
+  min-height: 180px;
+  max-height: 330px;
+  object-fit: cover;
+  filter: saturate(0.9) contrast(1.04);
+}
+
+@media (max-width: 680px) {
+  .campfire-banner {
+    margin-top: 32px;
+    border-radius: 13px;
+  }
+
+  .campfire-banner img {
+    min-height: 130px;
+  }
+}
