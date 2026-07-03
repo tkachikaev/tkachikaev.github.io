@@ -4,6 +4,15 @@ const toggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".main-nav");
 const navLinks = [...document.querySelectorAll(".main-nav a")];
 
+function loadStylesheet(href) {
+  if (document.querySelector(`link[href="${href}"]`)) return;
+
+  const stylesheet = document.createElement("link");
+  stylesheet.rel = "stylesheet";
+  stylesheet.href = href;
+  document.head.append(stylesheet);
+}
+
 function setupCampfireBanner() {
   const banner = document.querySelector(".campfire-banner");
   if (!banner || banner.dataset.layoutReady === "true") return;
@@ -11,13 +20,7 @@ function setupCampfireBanner() {
   const image = banner.querySelector("img");
   if (!image) return;
 
-  if (!document.querySelector('link[href="css/campfire.css"]')) {
-    const stylesheet = document.createElement("link");
-    stylesheet.rel = "stylesheet";
-    stylesheet.href = "css/campfire.css";
-    document.head.append(stylesheet);
-  }
-
+  loadStylesheet("css/campfire.css");
   image.alt = "Костёр в игровом мире";
 
   const media = document.createElement("div");
@@ -40,7 +43,67 @@ function setupCampfireBanner() {
   banner.dataset.layoutReady = "true";
 }
 
+function setupThemeToggle() {
+  const headerInner = document.querySelector(".header-inner");
+  if (!headerInner || document.querySelector(".theme-toggle")) return;
+
+  loadStylesheet("css/theme.css");
+
+  const themeKey = "site-theme";
+  const button = document.createElement("button");
+  button.className = "theme-toggle";
+  button.type = "button";
+  button.innerHTML = `
+    <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+    </svg>
+    <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.1 15.2A8.5 8.5 0 0 1 8.8 3.9 8.5 8.5 0 1 0 20.1 15.2Z"></path>
+    </svg>
+  `;
+
+  const applyTheme = (theme, save = false) => {
+    const isLight = theme === "light";
+    document.documentElement.classList.toggle("theme-light", isLight);
+    document.documentElement.style.colorScheme = isLight ? "light" : "dark";
+    button.setAttribute("aria-pressed", String(isLight));
+    button.setAttribute(
+      "aria-label",
+      isLight ? "Включить тёмную тему" : "Включить светлую тему"
+    );
+    button.title = isLight ? "Тёмная тема" : "Светлая тема";
+
+    if (save) {
+      try {
+        localStorage.setItem(themeKey, theme);
+      } catch {
+        // Сайт продолжит работать, даже если браузер блокирует localStorage.
+      }
+    }
+  };
+
+  let savedTheme = "dark";
+  try {
+    savedTheme = localStorage.getItem(themeKey) || "dark";
+  } catch {
+    // По умолчанию сайт остаётся в текущей тёмной теме.
+  }
+
+  headerInner.append(button);
+  applyTheme(savedTheme);
+
+  button.addEventListener("click", () => {
+    const nextTheme = document.documentElement.classList.contains("theme-light")
+      ? "dark"
+      : "light";
+
+    applyTheme(nextTheme, true);
+  });
+}
+
 setupCampfireBanner();
+setupThemeToggle();
 
 function handleScroll() {
   const max = document.documentElement.scrollHeight - window.innerHeight;
