@@ -49,6 +49,7 @@ function setupThemeToggle() {
   if (!headerInner || document.querySelector(".theme-toggle")) return;
 
   loadStylesheet("css/theme.css");
+  loadStylesheet("css/campfire-glass.css");
 
   const themeKey = "site-theme";
   const button = document.createElement("button");
