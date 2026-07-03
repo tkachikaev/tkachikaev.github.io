@@ -7,6 +7,25 @@ const themeToggle = document.querySelector(".theme-toggle");
 const year = document.getElementById("year");
 const themeKey = "site-theme";
 const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
+
+const uiText = isEnglish
+  ? {
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+      enableLightTheme: "Enable light theme",
+      enableDarkTheme: "Enable dark theme",
+      lightTheme: "Light theme",
+      darkTheme: "Dark theme"
+    }
+  : {
+      openMenu: "Открыть меню",
+      closeMenu: "Закрыть меню",
+      enableLightTheme: "Включить светлую тему",
+      enableDarkTheme: "Включить тёмную тему",
+      lightTheme: "Светлая тема",
+      darkTheme: "Тёмная тема"
+    };
 
 function applyTheme(theme, save = false) {
   const isLight = theme === "light";
@@ -16,8 +35,8 @@ function applyTheme(theme, save = false) {
 
   if (themeToggle) {
     themeToggle.setAttribute("aria-pressed", String(isLight));
-    themeToggle.setAttribute("aria-label", isLight ? "Включить тёмную тему" : "Включить светлую тему");
-    themeToggle.title = isLight ? "Тёмная тема" : "Светлая тема";
+    themeToggle.setAttribute("aria-label", isLight ? uiText.enableDarkTheme : uiText.enableLightTheme);
+    themeToggle.title = isLight ? uiText.darkTheme : uiText.lightTheme;
   }
 
   if (save) {
@@ -45,7 +64,7 @@ function closeMenu() {
   navigation.classList.remove("open");
   menuToggle.classList.remove("open");
   menuToggle.setAttribute("aria-expanded", "false");
-  menuToggle.setAttribute("aria-label", "Открыть меню");
+  menuToggle.setAttribute("aria-label", uiText.openMenu);
 }
 
 menuToggle?.addEventListener("click", () => {
@@ -54,7 +73,7 @@ menuToggle?.addEventListener("click", () => {
   const isOpen = navigation.classList.toggle("open");
   menuToggle.classList.toggle("open", isOpen);
   menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+  menuToggle.setAttribute("aria-label", isOpen ? uiText.closeMenu : uiText.openMenu);
 });
 
 navigationLinks.forEach(link => link.addEventListener("click", closeMenu));
