@@ -17,14 +17,16 @@ if (parallaxScene) {
     document.head.append(script);
   });
 
-  loadStyle("css/bubi-parallax-assets.css?v=1");
+  loadStyle("css/bubi-parallax-assets.css?v=2");
 
   Promise.all([
     loadScript("js/bubi-parallax-sky.js?v=1"),
+    loadScript("js/bubi-parallax-sun.js?v=1"),
     loadScript("js/bubi-parallax-far.js?v=1"),
     loadScript("js/bubi-parallax-mid.js?v=1"),
-    loadScript("js/bubi-parallax-front.js?v=1")
-  ]).then(() => loadScript("js/bubi-parallax.js?v=1")).catch(() => {
+    loadScript("js/bubi-parallax-front.js?v=1"),
+    loadScript("js/bubi-parallax-mountains.js?v=1")
+  ]).then(() => loadScript("js/bubi-parallax.js?v=2")).catch(() => {
     // CSS fallback remains visible if a game layer fails to load.
   });
 }
