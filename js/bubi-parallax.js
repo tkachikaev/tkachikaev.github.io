@@ -4,6 +4,10 @@
 
   if (!scene || !assets) return;
 
+  if (assets.sky) {
+    scene.style.backgroundImage = `url("${assets.sky}")`;
+  }
+
   const layers = {
     far: scene.querySelector(".bubi-parallax__cloud-layer--far"),
     mid: scene.querySelector(".bubi-parallax__cloud-layer--mid"),
