@@ -79,10 +79,6 @@ html.theme-light body::before {
     linear-gradient(180deg, #f8f5ef, #eef3f4 60%, #f6f3ed);
 }
 
-html.theme-light .site-header {
-  background: rgba(248, 245, 239, 0.78);
-}
-
 html.theme-light .main-nav a {
   color: #53616b;
 }
@@ -111,6 +107,16 @@ html.theme-light .intro,
 html.theme-light .about-copy > p:not(.eyebrow),
 html.theme-light .contact-card p:not(.eyebrow) {
   color: #586671;
+}
+
+html.theme-light .text-link,
+html.theme-light .text-link span {
+  color: #1c2730;
+}
+
+html.theme-light .text-link:hover,
+html.theme-light .text-link:hover span {
+  color: var(--accent);
 }
 
 html.theme-light .hero-art::after {
