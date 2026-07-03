@@ -38,7 +38,7 @@ function updateProjectCard(card, project) {
 function setupSiteContent() {
   const heroImage = document.querySelector(".hero-art img");
   if (heroImage) {
-    heroImage.src = "assets/gallery/topimage.svg";
+    heroImage.src = "assets/gallery/topimage.jpg";
     heroImage.alt = "Игровой лесной мир";
   }
 
@@ -48,7 +48,7 @@ function setupSiteContent() {
       description: "2D-платформер. В разработке.",
       status: "В разработке",
       statusClass: "yellow",
-      image: "assets/gallery/bubi.svg",
+      image: "assets/gallery/bubi.jpg",
       alt: "Bubi — зелёная птица в лесном мире"
     },
     {
@@ -80,7 +80,7 @@ function setupSiteContent() {
       description: "Светящийся сад и древние механизмы.",
       status: "Концепт",
       statusClass: "purple",
-      image: "assets/gallery/signal-bloom.svg",
+      image: "assets/gallery/signal-bloom.jpg",
       alt: "Светящийся сад"
     },
     {
@@ -88,7 +88,7 @@ function setupSiteContent() {
       description: "Небесные острова и воздушная доставка.",
       status: "Идея",
       statusClass: "",
-      image: "assets/gallery/cloudline-courier.svg",
+      image: "assets/gallery/cloudline-courier.jpg",
       alt: "Воздушный курьер в облаках"
     },
     {
@@ -96,7 +96,7 @@ function setupSiteContent() {
       description: "Карманные планеты, прыжки и орбиты.",
       status: "Идея",
       statusClass: "blue",
-      image: "assets/gallery/tiny-orbit.svg",
+      image: "assets/gallery/tiny-orbit.jpg",
       alt: "Маленькая планета в космосе"
     }
   ];
