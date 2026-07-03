@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/style.css?v=6">
   <link rel="stylesheet" href="css/theme.css?v=7">
-  <link rel="stylesheet" href="css/bubi.css?v=1">
+  <link rel="stylesheet" href="css/bubi.css?v=2">
   <link rel="stylesheet" href="css/language.css?v=3">
   <script>
     try {
@@ -109,26 +109,26 @@
             <p class="eyebrow">ВРАГИ</p>
             <h2 class="bubi-section-title">Первые противники мира Bubi.</h2>
           </div>
-          <p>Сначала игрок встретит простых врагов, но со временем их поведение и опасность будут меняться.</p>
+          <p>Враги будут отличаться поведением, скоростью и тем, как заставляют искать следующий ход.</p>
         </div>
 
-        <article class="bubi-enemy-card reveal">
-          <div class="bubi-enemy-card__media">
-            <img src="assets/gallery/slime-idle.webp" alt="Анимированный враг Слайм" loading="lazy" decoding="async">
-          </div>
-
-          <div class="bubi-enemy-card__content">
-            <p class="bubi-enemy-card__eyebrow">ОБЫЧНЫЙ ВРАГ</p>
-            <h3>Слайм</h3>
-            <p>Простейший противник в Bubi. Медленно передвигается по земле, перекрывает путь и заставляет игрока вовремя прыгать или атаковать.</p>
-
-            <ul class="bubi-enemy-card__stats">
-              <li><span>Тип</span><strong>Наземный</strong></li>
-              <li><span>Скорость</span><strong>Медленная</strong></li>
-              <li><span>Опасность</span><strong>Базовая</strong></li>
-            </ul>
-          </div>
-        </article>
+        <div class="bubi-enemies-grid">
+          <article class="bubi-enemy-card reveal">
+            <div class="bubi-enemy-card__media">
+              <img src="assets/gallery/slime-idle.webp" alt="Анимированный враг Слайм" loading="lazy" decoding="async">
+            </div>
+            <div class="bubi-enemy-card__content">
+              <p class="bubi-enemy-card__eyebrow">ОБЫЧНЫЙ ВРАГ</p>
+              <h3>Слайм</h3>
+              <p>Простейший противник в Bubi. Медленно передвигается по земле, перекрывает путь и заставляет вовремя прыгать или атаковать.</p>
+              <ul class="bubi-enemy-card__tags" aria-label="Характеристики Слайма">
+                <li>Наземный</li>
+                <li>Медленный</li>
+                <li>Базовый</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 

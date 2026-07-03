@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/style.css?v=6">
   <link rel="stylesheet" href="css/theme.css?v=7">
-  <link rel="stylesheet" href="css/bubi.css?v=1">
+  <link rel="stylesheet" href="css/bubi.css?v=2">
   <link rel="stylesheet" href="css/language.css?v=3">
   <script>
     try {
@@ -109,26 +109,26 @@
             <p class="eyebrow">ENEMIES</p>
             <h2 class="bubi-section-title">The first enemies in Bubi’s world.</h2>
           </div>
-          <p>At first, the player will meet simple enemies, but their behavior and danger will grow over time.</p>
+          <p>Enemies will differ in their behavior, speed, and the way they make the player find the next move.</p>
         </div>
 
-        <article class="bubi-enemy-card reveal">
-          <div class="bubi-enemy-card__media">
-            <img src="assets/gallery/slime-idle.webp" alt="Animated Slime enemy" loading="lazy" decoding="async">
-          </div>
-
-          <div class="bubi-enemy-card__content">
-            <p class="bubi-enemy-card__eyebrow">REGULAR ENEMY</p>
-            <h3>Slime</h3>
-            <p>The simplest enemy in Bubi. It slowly moves along the ground, blocks the path, and makes the player jump or attack at the right moment.</p>
-
-            <ul class="bubi-enemy-card__stats">
-              <li><span>Type</span><strong>Ground</strong></li>
-              <li><span>Speed</span><strong>Slow</strong></li>
-              <li><span>Threat</span><strong>Basic</strong></li>
-            </ul>
-          </div>
-        </article>
+        <div class="bubi-enemies-grid">
+          <article class="bubi-enemy-card reveal">
+            <div class="bubi-enemy-card__media">
+              <img src="assets/gallery/slime-idle.webp" alt="Animated Slime enemy" loading="lazy" decoding="async">
+            </div>
+            <div class="bubi-enemy-card__content">
+              <p class="bubi-enemy-card__eyebrow">REGULAR ENEMY</p>
+              <h3>Slime</h3>
+              <p>The simplest enemy in Bubi. It slowly moves along the ground, blocks the path, and makes the player jump or attack at the right moment.</p>
+              <ul class="bubi-enemy-card__tags" aria-label="Slime traits">
+                <li>Ground</li>
+                <li>Slow</li>
+                <li>Basic</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
