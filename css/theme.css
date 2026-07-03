@@ -1,6 +1,6 @@
 /* Theme variables and light-theme overrides */
 html.theme-light {
-  color-scheme: light;
+  color-scheme: only light !important;
   --bg: #f6f3ed;
   --bg-gradient: linear-gradient(180deg, #f8f5ef, #eef3f4 60%, #f6f3ed);
   --panel: #ffffff;
@@ -9,14 +9,26 @@ html.theme-light {
   --line: rgba(28, 39, 48, .15);
   --accent: #d87813;
   --accent2: #a85b0c;
-  --header-bg: rgba(248, 245, 239, .88);
+  --header-bg: rgba(248, 245, 239, .94);
   --header-border: rgba(28, 39, 48, .12);
   --header-shadow: 0 8px 24px rgba(44, 55, 62, .08);
 }
 
+html.theme-light body::before {
+  background:
+    radial-gradient(circle at 17% 8%, rgba(216, 120, 19, .10), transparent 25%),
+    radial-gradient(circle at 90% 52%, rgba(111, 147, 165, .12), transparent 31%),
+    var(--bg-gradient);
+}
+
+html.theme-light .noise {
+  opacity: .018;
+  mix-blend-mode: multiply;
+}
+
 html.theme-light .theme-toggle .theme-icon-sun { display: none; }
 html.theme-light .theme-toggle .theme-icon-moon { display: block; }
-html.theme-light .theme-toggle { background: rgba(255, 255, 255, .72); color: #a85b0c; box-shadow: 0 8px 20px rgba(57, 44, 28, .08); }
+html.theme-light .theme-toggle { background: rgba(255, 255, 255, .78); color: #a85b0c; box-shadow: 0 8px 20px rgba(57, 44, 28, .08); }
 
 html.theme-light .main-nav a { color: #53616b; }
 html.theme-light .main-nav a:hover,
@@ -30,9 +42,13 @@ html.theme-light .text-link,
 html.theme-light .text-link span { color: #1c2730; }
 html.theme-light .text-link:hover,
 html.theme-light .text-link:hover span { color: var(--accent); }
+html.theme-light .scroll-hint { color: #75818a; }
+html.theme-light .mouse { border-color: #7c8790; }
+html.theme-light .mouse::after { background: #596771; }
 html.theme-light .hero-art::after { border-color: rgba(28, 39, 48, .12); }
 html.theme-light .hero-art figcaption { border-color: rgba(255, 255, 255, .62); background: rgba(255, 255, 255, .58); color: #53616b; box-shadow: 0 8px 20px rgba(44, 55, 62, .12); }
 html.theme-light .hero-art figcaption i { box-shadow: 0 0 13px var(--accent); }
+html.theme-light .projects-section { border-top-color: rgba(28, 39, 48, .08); background: linear-gradient(180deg, rgba(255, 255, 255, .52), transparent); }
 html.theme-light .project-info p,
 html.theme-light footer { color: #65727c; }
 html.theme-light .contact-card { border-color: var(--line); background: radial-gradient(circle at 50% 150%, rgba(216, 120, 19, .18), transparent 42%), linear-gradient(125deg, #ffffff, #edf2f3); box-shadow: 0 18px 45px rgba(44, 55, 62, .07); }
