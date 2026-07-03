@@ -1,203 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d10">
-  <meta name="description" content="Личная страница Тимура — игры, заметки и идеи без чужих ТЗ.">
-  <title>Timur — делаю игры, какие сам хочу</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Личная страница независимого разработчика игр.">
+  <title>timur.dev — делаю игры, какие хочу</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="site-noise" aria-hidden="true"></div>
-  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span></span></div>
 
-  <header class="site-header" id="top">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="На главную">timur<span>.</span></a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="На главную">T<span>.</span></a>
 
-      <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span>
       </button>
 
       <nav class="main-nav" aria-label="Основная навигация">
         <a class="active" href="#top">Главная</a>
         <a href="#about">Обо мне</a>
-        <a href="#notes">Заметки</a>
-        <a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+        <a href="#projects">Проекты</a>
+        <a href="#contact">Контакты</a>
       </nav>
 
-      <a class="nav-github" href="https://github.com/tkachikaev" target="_blank" rel="noreferrer" aria-label="Открыть GitHub">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.51c.48.09.65-.2.65-.46v-1.7c-2.66.58-3.22-1.13-3.22-1.13-.43-1.1-1.06-1.39-1.06-1.39-.87-.6.07-.59.07-.59.96.07 1.47.99 1.47.99.86 1.46 2.25 1.04 2.8.79.09-.62.34-1.05.61-1.29-2.13-.24-4.37-1.07-4.37-4.74 0-1.05.38-1.9.99-2.57-.1-.24-.43-1.22.1-2.54 0 0 .8-.26 2.61.98A9.1 9.1 0 0 1 12 7.14c.81 0 1.62.11 2.37.32 1.8-1.24 2.6-.98 2.6-.98.53 1.32.2 2.3.1 2.54.62.67 1 1.52 1 2.57 0 3.68-2.24 4.49-4.38 4.73.34.3.65.87.65 1.75v2.58c0 .26.17.56.66.46A9.5 9.5 0 0 0 12 2.5Z"/></svg>
-      </a>
+      <div class="header-links">
+        <a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.3 6.84 9.65.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.36 1.11 2.93.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .85-.28 2.76 1.05A9.2 9.2 0 0 1 12 6.55c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.56 1.41.21 2.46.11 2.72.64.72 1.03 1.63 1.03 2.75 0 3.92-2.35 4.78-4.58 5.04.36.32.68.93.68 1.88v2.79c0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
+        </a>
+        <a href="mailto:hello@example.com" aria-label="Написать письмо" title="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h17A1.5 1.5 0 0 1 22 7v10a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 17V7a1.5 1.5 0 0 1 1.5-1.5Zm0 2.2v.25l8.5 5.3 8.5-5.3V7.7L12 13 3.5 7.7Z"/></svg>
+        </a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero section" aria-labelledby="hero-title">
-      <canvas id="spark-canvas" aria-hidden="true"></canvas>
-      <div class="hero-orb hero-orb--one" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb--two" aria-hidden="true"></div>
-      <div class="hero-landscape" aria-hidden="true">
-        <div class="ridge ridge--back"></div>
-        <div class="ridge ridge--front"></div>
-        <div class="hero-mist"></div>
-      </div>
-
+  <main id="top">
+    <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span></span> личная игровая мастерская</div>
-          <h1 id="hero-title">Делаю игры,<br><em>какие сам хочу.</em></h1>
-          <p class="hero-lead">
-            Без чужих ТЗ и обязательств. Пробую идеи, собираю миры, переделываю то, что не работает, и оставляю здесь то, что действительно хочется сделать.
+          <p class="eyebrow">INDEPENDENT GAME DEVELOPER</p>
+          <h1>Делаю игры,<br>какие <em>хочу.</em></h1>
+          <p class="intro">
+            Придумываю идеи, собираю миры и механики, пробую новое и делаю игры,
+            в которые самому было бы интересно играть.
           </p>
           <div class="hero-actions">
-            <a class="btn btn--primary magnetic" href="#notes">
-              <span>Смотреть заметки</span>
-              <b>↓</b>
-            </a>
-            <a class="btn btn--ghost" href="https://github.com/tkachikaev" target="_blank" rel="noreferrer">
-              <span>GitHub</span>
-              <b>↗</b>
-            </a>
+            <a class="button button-main" href="#projects">Смотреть проекты <span>→</span></a>
+            <a class="text-link" href="#about">Обо мне <span>→</span></a>
           </div>
-          <a class="scroll-hint" href="#about"><span></span> листай ниже</a>
+          <p class="scroll-hint"><span class="mouse"></span> Листай вниз</p>
         </div>
 
-        <aside class="profile-card reveal reveal--delay" aria-label="Профиль Тимура">
-          <div class="profile-card__top">
-            <span class="profile-status"><i></i> открыт к идеям</span>
-            <span class="profile-index">01</span>
-          </div>
-          <div class="profile-photo-wrap">
-            <img class="profile-photo" src="assets/avatar.png" alt="Тимур">
-            <div class="profile-glow" aria-hidden="true"></div>
-          </div>
-          <div class="profile-card__bottom">
-            <strong>Timur</strong>
-            <p>Игры · идеи · эксперименты</p>
-          </div>
-        </aside>
+        <figure class="hero-art reveal delay-1">
+          <img src="assets/gallery/far-lands.jpg" alt="Игровой мир: далёкие земли">
+          <figcaption><i></i> Игра в разработке</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="about section" id="about" aria-labelledby="about-title">
-      <div class="container about-grid">
-        <div class="about-copy reveal">
-          <div class="section-kicker">01 / обо мне</div>
-          <h2 id="about-title">Не тороплюсь.<br><span>Зато делаю по-своему.</span></h2>
-          <p>
-            Мне нравится момент, когда из одной мысли появляется что-то живое: управление, звук, уровень, персонаж, настроение. Не хочу гнаться за чужими ожиданиями — хочу делать игры, в которые самому было бы интересно поиграть.
-          </p>
-          <blockquote>«Игра начинается там, где хочется задержаться ещё на пять минут.»</blockquote>
-        </div>
-
-        <div class="about-cards">
-          <article class="idea-card reveal">
-            <span class="idea-card__number">01</span>
-            <div class="idea-card__icon icon--cube">◇</div>
-            <h3>Идеи</h3>
-            <p>Иногда всё начинается с картинки. Иногда — с одной механики, которую хочется покрутить.</p>
-          </article>
-          <article class="idea-card reveal reveal--delay-sm">
-            <span class="idea-card__number">02</span>
-            <div class="idea-card__icon icon--window">▣</div>
-            <h3>Сборка</h3>
-            <p>Пробую, ломаю, переделываю. Медленно, но с пониманием, зачем это всё нужно.</p>
-          </article>
-          <article class="idea-card reveal reveal--delay-md">
-            <span class="idea-card__number">03</span>
-            <div class="idea-card__icon icon--spark">✦</div>
-            <h3>Свобода</h3>
-            <p>Жанр и масштаб могут меняться. Главное — чтобы проект не терял ощущение живого.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="notes section" id="notes" aria-labelledby="notes-title">
+    <section class="projects-section" id="projects">
       <div class="container">
         <div class="section-heading reveal">
           <div>
-            <div class="section-kicker">02 / заметки</div>
-            <h2 id="notes-title">Миры, которые хочется сделать.</h2>
+            <p class="eyebrow">ПРОЕКТЫ</p>
+            <h2>Что в работе</h2>
           </div>
-          <p>Это не анонсы и не обещания релизов. Скорее визуальные направления, к которым сейчас тянет.</p>
+          <a class="text-link desktop-only" href="#contact">Смотреть всё <span>→</span></a>
         </div>
 
-        <div class="gallery-grid">
-          <button class="mood-card mood-card--large reveal" data-image="assets/gallery/warm-forest.jpg" data-title="Тёплый лес" type="button">
-            <img src="assets/gallery/warm-forest.jpg" alt="Лесная игровая сцена" loading="lazy">
-            <span class="mood-card__shade"></span>
-            <span class="mood-card__content"><small>НАБРОСОК 01</small><strong>Тёплый лес</strong><em>↗</em></span>
-          </button>
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <img src="assets/gallery/warm-forest.jpg" alt="Лесной мир">
+            <div class="project-info">
+              <h3>Forest Quest</h3>
+              <p>2D-платформер. Прототип.</p>
+              <span class="status orange">В разработке</span>
+            </div>
+          </article>
 
-          <button class="mood-card reveal reveal--delay-sm" data-image="assets/gallery/far-lands.jpg" data-title="Дальняя дорога" type="button">
-            <img src="assets/gallery/far-lands.jpg" alt="Горная игровая сцена" loading="lazy">
-            <span class="mood-card__shade"></span>
-            <span class="mood-card__content"><small>НАБРОСОК 02</small><strong>Дальняя дорога</strong><em>↗</em></span>
-          </button>
+          <article class="project-card reveal delay-1">
+            <img src="assets/gallery/red-sands.jpg" alt="Пустынный мир">
+            <div class="project-info">
+              <h3>Desert Ruins</h3>
+              <p>Исследование, загадки, секреты.</p>
+              <span class="status blue">Идея</span>
+            </div>
+          </article>
 
-          <button class="mood-card reveal reveal--delay-sm" data-image="assets/gallery/deep-night.jpg" data-title="Ночная глубина" type="button">
-            <img src="assets/gallery/deep-night.jpg" alt="Ночная игровая сцена" loading="lazy">
-            <span class="mood-card__shade"></span>
-            <span class="mood-card__content"><small>НАБРОСОК 03</small><strong>Ночная глубина</strong><em>↗</em></span>
-          </button>
+          <article class="project-card reveal delay-2">
+            <img src="assets/gallery/deep-night.jpg" alt="Космический мир">
+            <div class="project-info">
+              <h3>Star Drift</h3>
+              <p>Аркадный шутер в космосе.</p>
+              <span class="status purple">Концепт</span>
+            </div>
+          </article>
 
-          <button class="mood-card mood-card--wide reveal" data-image="assets/gallery/red-sands.jpg" data-title="Сухой ветер" type="button">
-            <img src="assets/gallery/red-sands.jpg" alt="Пустынная игровая сцена" loading="lazy">
-            <span class="mood-card__shade"></span>
-            <span class="mood-card__content"><small>НАБРОСОК 04</small><strong>Сухой ветер</strong><em>↗</em></span>
-          </button>
+          <article class="project-card reveal delay-3">
+            <img src="assets/gallery/far-lands.jpg" alt="Мир пещер и приключений">
+            <div class="project-info">
+              <h3>Cave Story</h3>
+              <p>Атмосферное приключение.</p>
+              <span class="status yellow">Прототип</span>
+            </div>
+          </article>
+        </div>
+
+        <blockquote class="quote reveal">
+          <span>“</span>
+          <p>Я не делаю игры, чтобы кому-то что-то доказать.<br>Я делаю их, потому что не могу иначе.</p>
+          <svg viewBox="0 0 150 42" aria-hidden="true"><path d="M2 36C31 26 44 32 69 20S104 24 124 7m-5 0 7 1-2 7"/></svg>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img src="assets/avatar.png" alt="Фото автора сайта">
+        </div>
+        <div class="about-copy reveal delay-1">
+          <p class="eyebrow">ОБО МНЕ</p>
+          <h2>Моё личное<br>игровое пространство.</h2>
+          <p>Тут будут собираться проекты, прототипы, случайные идеи и всё, что хочется сохранить или показать. Без громких обещаний — просто путь, который мне нравится проходить.</p>
+          <a class="text-link" href="https://github.com/tkachikaev" target="_blank" rel="noreferrer">Открыть GitHub <span>→</span></a>
         </div>
       </div>
     </section>
 
-    <section class="quote-section section" aria-label="Личная мысль">
-      <div class="container reveal">
-        <div class="quote-banner">
-          <img src="assets/gallery/campfire.jpg" alt="Ночной костёр в игровом мире" loading="lazy">
-          <div class="quote-banner__veil"></div>
-          <div class="quote-banner__copy">
-            <span>МОЯ ПРИЧИНА</span>
-            <p>Не делаю игры, чтобы кому-то что-то доказать.<br>Делаю их, потому что иначе неинтересно.</p>
-          </div>
-          <div class="quote-banner__mark">✦</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact section" aria-labelledby="contact-title">
-      <div class="container contact-box reveal">
-        <div>
-          <div class="section-kicker">03 / дальше</div>
-          <h2 id="contact-title">Всё только начинается.</h2>
-          <p>Код, прототипы и то, что однажды вырастет во что-то большее, будет появляться на GitHub.</p>
-        </div>
-        <a class="btn btn--primary magnetic" href="https://github.com/tkachikaev" target="_blank" rel="noreferrer">
-          <span>Открыть GitHub</span><b>↗</b>
-        </a>
+    <section class="contact-section" id="contact">
+      <div class="container contact-card reveal">
+        <p class="eyebrow">КОНТАКТЫ</p>
+        <h2>Загляни в GitHub.</h2>
+        <p>Там будут код, эксперименты и всё, что постепенно превращается в игры.</p>
+        <a class="button button-main" href="https://github.com/tkachikaev" target="_blank" rel="noreferrer">Открыть GitHub <span>→</span></a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <a class="brand" href="#top">timur<span>.</span></a>
-      <p>Делаю игры, какие сам хочу.</p>
-      <p>© <span id="year"></span></p>
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> · Сделано с любовью к играм</p>
+      <div class="footer-links">
+        <a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="#top">Наверх ↑</a>
+      </div>
     </div>
   </footer>
-
-  <dialog class="image-modal" aria-labelledby="modal-title">
-    <button class="modal-close" type="button" aria-label="Закрыть">×</button>
-    <img src="" alt="" id="modal-image">
-    <p id="modal-title"></p>
-  </dialog>
 
   <script src="js/main.js"></script>
 </body>
