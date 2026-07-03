@@ -5,6 +5,13 @@
   background-size: auto 100%;
 }
 
+.bubi-parallax.has-game-sun::before {
+  width: clamp(88px, 12vw, 150px);
+  border-radius: 0;
+  background: var(--bubi-parallax-sun) center / contain no-repeat;
+  box-shadow: none;
+}
+
 .bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer {
   background-repeat: repeat-x;
   background-position: left bottom;
@@ -13,21 +20,21 @@
 .bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer--far {
   top: 16%;
   height: 54px;
-  background-size: 146px 40px;
+  background-size: 183px 50px;
   animation: bubi-game-cloud-far 76s linear infinite;
 }
 
 .bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer--mid {
   top: 35%;
   height: 82px;
-  background-size: 470px 74px;
+  background-size: 391px 61px;
   animation: bubi-game-cloud-mid 57s linear infinite;
 }
 
 .bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer--front {
   top: 53%;
-  height: 148px;
-  background-size: 300px 150px;
+  height: 168px;
+  background-size: 334px 167px;
   animation: bubi-game-cloud-front 38s linear infinite;
 }
 
@@ -35,16 +42,31 @@
   display: none;
 }
 
+.bubi-parallax.has-game-mountains .bubi-parallax__mountain-layer {
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-size: 1024px 234px;
+  animation: bubi-game-mountains 46s linear infinite;
+}
+
+.bubi-parallax.has-game-mountains .bubi-parallax__mountain-track {
+  display: none;
+}
+
 @keyframes bubi-game-cloud-far {
-  to { background-position-x: -146px; }
+  to { background-position-x: -183px; }
 }
 
 @keyframes bubi-game-cloud-mid {
-  to { background-position-x: -470px; }
+  to { background-position-x: -391px; }
 }
 
 @keyframes bubi-game-cloud-front {
-  to { background-position-x: -300px; }
+  to { background-position-x: -334px; }
+}
+
+@keyframes bubi-game-mountains {
+  to { background-position-x: -1024px; }
 }
 
 @media (max-width: 680px) {
@@ -54,7 +76,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer {
+  .bubi-parallax.has-game-clouds .bubi-parallax__cloud-layer,
+  .bubi-parallax.has-game-mountains .bubi-parallax__mountain-layer {
     animation: none !important;
   }
 }
