@@ -13,6 +13,110 @@ function loadStylesheet(href) {
   document.head.append(stylesheet);
 }
 
+function updateProjectCard(card, project) {
+  const image = card.querySelector("img");
+  const info = card.querySelector(".project-info");
+
+  if (!image || !info) return;
+
+  image.src = project.image;
+  image.alt = project.alt;
+
+  const title = document.createElement("h3");
+  title.textContent = project.title;
+
+  const description = document.createElement("p");
+  description.textContent = project.description;
+
+  const status = document.createElement("span");
+  status.className = `status${project.statusClass ? ` ${project.statusClass}` : ""}`;
+  status.textContent = project.status;
+
+  info.replaceChildren(title, description, status);
+}
+
+function setupSiteContent() {
+  const heroImage = document.querySelector(".hero-art img");
+  if (heroImage) {
+    heroImage.src = "assets/gallery/topimage.svg";
+    heroImage.alt = "Игровой лесной мир";
+  }
+
+  const projects = [
+    {
+      title: "Bubi",
+      description: "2D-платформер. В разработке.",
+      status: "В разработке",
+      statusClass: "yellow",
+      image: "assets/gallery/bubi.svg",
+      alt: "Bubi — зелёная птица в лесном мире"
+    },
+    {
+      title: "Desert Ruins",
+      description: "Исследование, загадки, секреты.",
+      status: "Идея",
+      statusClass: "blue",
+      image: "assets/gallery/red-sands.jpg",
+      alt: "Пустынный мир"
+    },
+    {
+      title: "Star Drift",
+      description: "Аркадный шутер в космосе.",
+      status: "Концепт",
+      statusClass: "purple",
+      image: "assets/gallery/deep-night.jpg",
+      alt: "Космический мир"
+    },
+    {
+      title: "Forest Quest",
+      description: "Лесное приключение с тайными тропами.",
+      status: "Прототип",
+      statusClass: "",
+      image: "assets/gallery/warm-forest.jpg",
+      alt: "Лесной мир"
+    },
+    {
+      title: "Signal Bloom",
+      description: "Светящийся сад и древние механизмы.",
+      status: "Концепт",
+      statusClass: "purple",
+      image: "assets/gallery/signal-bloom.svg",
+      alt: "Светящийся сад"
+    },
+    {
+      title: "Cloudline Courier",
+      description: "Небесные острова и воздушная доставка.",
+      status: "Идея",
+      statusClass: "",
+      image: "assets/gallery/cloudline-courier.svg",
+      alt: "Воздушный курьер в облаках"
+    },
+    {
+      title: "Tiny Orbit",
+      description: "Карманные планеты, прыжки и орбиты.",
+      status: "Идея",
+      statusClass: "blue",
+      image: "assets/gallery/tiny-orbit.svg",
+      alt: "Маленькая планета в космосе"
+    }
+  ];
+
+  document
+    .querySelectorAll(".projects-grid .project-card")
+    .forEach((card, index) => {
+      if (projects[index]) updateProjectCard(card, projects[index]);
+    });
+
+  document.querySelector(".section-heading .desktop-only")?.remove();
+
+  const emailLink = document.querySelector('.header-links a[href^="mailto:"]');
+  if (emailLink) {
+    emailLink.href = "mailto:tkachikaev@gmail.com";
+    emailLink.title = "Написать письмо";
+    emailLink.setAttribute("aria-label", "Написать письмо на tkachikaev@gmail.com");
+  }
+}
+
 function setupCampfireBanner() {
   const banner = document.querySelector(".campfire-banner");
   if (!banner || banner.dataset.layoutReady === "true") return;
@@ -134,6 +238,7 @@ function setupThemeToggle() {
   });
 }
 
+setupSiteContent();
 setupCampfireBanner();
 setupThemeToggle();
 setupHeroStatusLabel();
