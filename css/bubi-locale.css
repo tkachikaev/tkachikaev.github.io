@@ -1,0 +1,12 @@
+/* Language-specific UI labels for the Bubi page. */
+html[lang="en"] .bubi-gallery-item::after {
+  content: "Open";
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubi-enemy-card,
+  .bubi-gallery-item img,
+  .bubi-gallery-item::after {
+    transition: none;
+  }
+}
