@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/style.css?v=6">
   <link rel="stylesheet" href="css/theme.css?v=7">
-  <link rel="stylesheet" href="css/bubi.css?v=2">
+  <link rel="stylesheet" href="css/bubi.css?v=3">
+  <link rel="stylesheet" href="css/bubi-locale.css?v=1">
   <link rel="stylesheet" href="css/language.css?v=3">
   <script>
     try {
@@ -38,138 +39,26 @@
         <span class="language-switcher__divider" aria-hidden="true">/</span>
         <a href="bubi-en.html" lang="en" hreflang="en">EN</a>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Включить светлую тему" aria-pressed="false" title="Светлая тема"><span aria-hidden="true">◐</span></button>
-      <div class="header-links"><a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">GH</a></div>
+      <button class="theme-toggle" type="button" aria-label="Включить светлую тему" aria-pressed="false" title="Светлая тема">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 15.2A8.5 8.5 0 0 1 8.8 3.9 8.5 8.5 0 1 0 20.1 15.2Z"></path></svg>
+      </button>
+      <div class="header-links">
+        <a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.3 6.84 9.65.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.36 1.11 2.93.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .85-.28 2.76 1.05A9.2 9.2 0 0 1 12 6.55c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.56 1.41.21 2.46.11 2.72.64.72 1.03 1.63 1.03 2.75 0 3.92-2.35 4.78-4.58 5.04.36.32.68.93.68 1.88v2.79c0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg></a>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="bubi">
-      <div class="container">
-        <a class="bubi-back" href="index.html#projects">← Все проекты</a>
-        <div class="bubi-hero-grid">
-          <div class="reveal">
-            <p class="eyebrow">BUBI · В РАЗРАБОТКЕ</p>
-            <h1 class="bubi-title"><span class="bubi-title__green">Bu</span><span class="bubi-title__orange">bi</span></h1>
-            <p class="bubi-summary">Яркий 2D-платформер о зелёной птице, которая путешествует по игровым мирам, ищет секреты и учится справляться с тем, что встречает на пути.</p>
-            <div class="bubi-status-row" aria-label="Статус проекта">
-              <span class="bubi-status">Лесной мир</span>
-              <span class="bubi-status">Unity 2D</span>
-              <span class="bubi-status">PC</span>
-            </div>
-          </div>
-          <figure class="bubi-cover reveal delay-1">
-            <img src="assets/gallery/bubi.jpg" alt="Bubi в лесном игровом мире" fetchpriority="high" decoding="async">
-            <figcaption>Первый игровой мир</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="bubi-section bubi-section--surface" id="about-game">
-      <div class="container">
-        <div class="bubi-section-heading reveal">
-          <div>
-            <p class="eyebrow">О ПРОЕКТЕ</p>
-            <h2 class="bubi-section-title">Игра, которую хочется пройти самому.</h2>
-          </div>
-        </div>
-        <div class="bubi-about-grid">
-          <p class="bubi-about-copy reveal">Bubi собирается как тёплое и понятное приключение: без лишней сложности, но с движением, исследованием, тайными тропами и мирами, в которые хочется вернуться. Сейчас основа проекта — лес, а дальше появятся руины, пустыня и космические уровни.</p>
-          <ul class="bubi-points reveal delay-1">
-            <li><i></i><span>Чистый мультяшный 2D-стиль и яркие читаемые миры.</span></li>
-            <li><i></i><span>Уровни с секретами, маршрутами и небольшими игровыми находками.</span></li>
-            <li><i></i><span>Новые механики будут открываться вместе с путешествием Bubi.</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="bubi-section" id="mechanics">
-      <div class="container">
-        <div class="bubi-section-heading reveal">
-          <div>
-            <p class="eyebrow">ОСНОВА ГЕЙМПЛЕЯ</p>
-            <h2 class="bubi-section-title">Три вещи, вокруг которых строится Bubi.</h2>
-          </div>
-          <p>Базовые механики уже определяют темп игры: легко начать, приятно двигаться, интересно искать следующий путь.</p>
-        </div>
-        <div class="bubi-mechanics">
-          <article class="bubi-mechanic reveal"><span class="bubi-mechanic-number">01</span><h3>Движение и прыжок</h3><p>Быстрый отклик, двойной прыжок и воздушный контроль — основа исследования уровней.</p></article>
-          <article class="bubi-mechanic reveal delay-1"><span class="bubi-mechanic-number">02</span><h3>Яйцо-снаряд</h3><p>Главная дальняя атака Bubi: помогает разбираться с врагами и даёт простор для будущих идей.</p></article>
-          <article class="bubi-mechanic reveal delay-2"><span class="bubi-mechanic-number">03</span><h3>Миры и секреты</h3><p>Лес, руины, пустыня и космос будут отличаться не только картинкой, но и темпом прохождения.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="bubi-section" id="enemies">
-      <div class="container">
-        <div class="bubi-section-heading reveal">
-          <div>
-            <p class="eyebrow">ВРАГИ</p>
-            <h2 class="bubi-section-title">Первые противники мира Bubi.</h2>
-          </div>
-          <p>Враги будут отличаться поведением, скоростью и тем, как заставляют искать следующий ход.</p>
-        </div>
-
-        <div class="bubi-enemies-grid">
-          <article class="bubi-enemy-card reveal">
-            <div class="bubi-enemy-card__media">
-              <img src="assets/gallery/slime-idle.webp" alt="Анимированный враг Слайм" loading="lazy" decoding="async">
-            </div>
-            <div class="bubi-enemy-card__content">
-              <p class="bubi-enemy-card__eyebrow">ОБЫЧНЫЙ ВРАГ</p>
-              <h3>Слайм</h3>
-              <p>Простейший противник в Bubi. Медленно передвигается по земле, перекрывает путь и заставляет вовремя прыгать или атаковать.</p>
-              <ul class="bubi-enemy-card__tags" aria-label="Характеристики Слайма">
-                <li>Наземный</li>
-                <li>Медленный</li>
-                <li>Базовый</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="bubi-section bubi-section--surface" id="gallery">
-      <div class="container">
-        <div class="bubi-section-heading reveal">
-          <div>
-            <p class="eyebrow">ГАЛЕРЕЯ</p>
-            <h2 class="bubi-section-title">Миры, настроение и визуальные наброски.</h2>
-          </div>
-          <p>Нажми на изображение, чтобы открыть его крупно. Галерея будет дополняться по мере разработки.</p>
-        </div>
-        <div class="bubi-gallery" aria-label="Галерея проекта Bubi">
-          <button class="bubi-gallery-item reveal" type="button" data-full="assets/gallery/bubi.jpg" data-caption="Bubi в лесном игровом мире" aria-label="Открыть: Bubi в лесном игровом мире"><img src="assets/gallery/bubi.jpg" alt="Bubi в лесном игровом мире" loading="lazy" decoding="async"></button>
-          <button class="bubi-gallery-item reveal delay-1" type="button" data-full="assets/gallery/warm-forest.jpg" data-caption="Тёплая лесная локация и направление первого мира" aria-label="Открыть: тёплая лесная локация"><img src="assets/gallery/warm-forest.jpg" alt="Тёплая лесная локация" loading="lazy" decoding="async"></button>
-          <button class="bubi-gallery-item reveal delay-2" type="button" data-full="assets/gallery/red-sands.jpg" data-caption="Набросок пустынного мира Bubi" aria-label="Открыть: набросок пустынного мира"><img src="assets/gallery/red-sands.jpg" alt="Набросок пустынного мира" loading="lazy" decoding="async"></button>
-          <button class="bubi-gallery-item reveal" type="button" data-full="assets/gallery/deep-night.jpg" data-caption="Настроение будущего космического мира" aria-label="Открыть: настроение космического мира"><img src="assets/gallery/deep-night.jpg" alt="Настроение космического мира" loading="lazy" decoding="async"></button>
-          <button class="bubi-gallery-item reveal delay-1" type="button" data-full="assets/gallery/campfire-forest-v1.jpg" data-caption="Ночной лес — настроение для мира Bubi" aria-label="Открыть: ночной лес"><img src="assets/gallery/campfire-forest-v1.jpg" alt="Ночной игровой лес" loading="lazy" decoding="async"></button>
-        </div>
-      </div>
-    </section>
+    <section class="hero" id="bubi"><div class="container"><a class="bubi-back" href="index.html#projects">← Все проекты</a><div class="bubi-hero-grid"><div class="reveal"><p class="eyebrow">BUBI · В РАЗРАБОТКЕ</p><h1 class="bubi-title"><span class="bubi-title__green">Bu</span><span class="bubi-title__orange">bi</span></h1><p class="bubi-summary">Яркий 2D-платформер о зелёной птице, которая путешествует по игровым мирам, ищет секреты и учится справляться с тем, что встречает на пути.</p><div class="bubi-status-row" aria-label="Статус проекта"><span class="bubi-status">Лесной мир</span><span class="bubi-status">Unity 2D</span><span class="bubi-status">PC</span></div></div><figure class="bubi-cover reveal delay-1"><img src="assets/gallery/bubi.jpg" alt="Bubi в лесном игровом мире" fetchpriority="high" decoding="async"><figcaption>Первый игровой мир</figcaption></figure></div></div></section>
+    <section class="bubi-section bubi-section--surface" id="about-game"><div class="container"><div class="bubi-section-heading reveal"><div><p class="eyebrow">О ПРОЕКТЕ</p><h2 class="bubi-section-title">Игра, которую хочется пройти самому.</h2></div></div><div class="bubi-about-grid"><p class="bubi-about-copy reveal">Bubi собирается как тёплое и понятное приключение: без лишней сложности, но с движением, исследованием, тайными тропами и мирами, в которые хочется вернуться. Сейчас основа проекта — лес, а дальше появятся руины, пустыня и космические уровни.</p><ul class="bubi-points reveal delay-1"><li><i></i><span>Чистый мультяшный 2D-стиль и яркие читаемые миры.</span></li><li><i></i><span>Уровни с секретами, маршрутами и небольшими игровыми находками.</span></li><li><i></i><span>Новые механики будут открываться вместе с путешествием Bubi.</span></li></ul></div></div></section>
+    <section class="bubi-section" id="mechanics"><div class="container"><div class="bubi-section-heading reveal"><div><p class="eyebrow">ОСНОВА ГЕЙМПЛЕЯ</p><h2 class="bubi-section-title">Три вещи, вокруг которых строится Bubi.</h2></div><p>Базовые механики уже определяют темп игры: легко начать, приятно двигаться, интересно искать следующий путь.</p></div><div class="bubi-mechanics"><article class="bubi-mechanic reveal"><span class="bubi-mechanic-number">01</span><h3>Движение и прыжок</h3><p>Быстрый отклик, двойной прыжок и воздушный контроль — основа исследования уровней.</p></article><article class="bubi-mechanic reveal delay-1"><span class="bubi-mechanic-number">02</span><h3>Яйцо-снаряд</h3><p>Главная дальняя атака Bubi: помогает разбираться с врагами и даёт простор для будущих идей.</p></article><article class="bubi-mechanic reveal delay-2"><span class="bubi-mechanic-number">03</span><h3>Миры и секреты</h3><p>Лес, руины, пустыня и космос будут отличаться не только картинкой, но и темпом прохождения.</p></article></div></div></section>
+    <section class="bubi-section" id="enemies"><div class="container"><div class="bubi-section-heading reveal"><div><p class="eyebrow">ВРАГИ</p><h2 class="bubi-section-title">Первые противники мира Bubi.</h2></div><p>Враги будут отличаться поведением, скоростью и тем, как заставляют искать следующий ход.</p></div><div class="bubi-enemies-grid"><article class="bubi-enemy-card reveal"><div class="bubi-enemy-card__media"><img src="assets/gallery/slime-idle.webp" alt="Анимированный враг Слайм" loading="lazy" decoding="async"></div><div class="bubi-enemy-card__content"><p class="bubi-enemy-card__eyebrow">ОБЫЧНЫЙ ВРАГ</p><h3>Слайм</h3><p>Простейший противник в Bubi. Медленно передвигается по земле, перекрывает путь и заставляет вовремя прыгать или атаковать.</p><ul class="bubi-enemy-card__tags" aria-label="Характеристики Слайма"><li>Наземный</li><li>Медленный</li><li>Базовый</li></ul></div></article></div></div></section>
+    <section class="bubi-section bubi-section--surface" id="gallery"><div class="container"><div class="bubi-section-heading reveal"><div><p class="eyebrow">ГАЛЕРЕЯ</p><h2 class="bubi-section-title">Миры, настроение и визуальные наброски.</h2></div><p>Нажми на изображение, чтобы открыть его крупно. Галерея будет дополняться по мере разработки.</p></div><div class="bubi-gallery" aria-label="Галерея проекта Bubi"><button class="bubi-gallery-item reveal" type="button" data-full="assets/gallery/bubi.jpg" data-caption="Bubi в лесном игровом мире" aria-label="Открыть: Bubi в лесном игровом мире"><img src="assets/gallery/bubi.jpg" alt="Bubi в лесном игровом мире" loading="lazy" decoding="async"></button><button class="bubi-gallery-item reveal delay-1" type="button" data-full="assets/gallery/warm-forest.jpg" data-caption="Тёплая лесная локация и направление первого мира" aria-label="Открыть: тёплая лесная локация"><img src="assets/gallery/warm-forest.jpg" alt="Тёплая лесная локация" loading="lazy" decoding="async"></button><button class="bubi-gallery-item reveal delay-2" type="button" data-full="assets/gallery/red-sands.jpg" data-caption="Набросок пустынного мира Bubi" aria-label="Открыть: набросок пустынного мира"><img src="assets/gallery/red-sands.jpg" alt="Набросок пустынного мира" loading="lazy" decoding="async"></button><button class="bubi-gallery-item reveal" type="button" data-full="assets/gallery/deep-night.jpg" data-caption="Настроение будущего космического мира" aria-label="Открыть: настроение космического мира"><img src="assets/gallery/deep-night.jpg" alt="Настроение космического мира" loading="lazy" decoding="async"></button><button class="bubi-gallery-item reveal delay-1" type="button" data-full="assets/gallery/campfire-forest-v1.jpg" data-caption="Ночной лес — настроение для мира Bubi" aria-label="Открыть: ночной лес"><img src="assets/gallery/campfire-forest-v1.jpg" alt="Ночной игровой лес" loading="lazy" decoding="async"></button></div></div></section>
   </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> · Сделано с любовью к играм</p>
-      <div class="footer-links"><a href="index.html#projects">Все проекты</a><a href="#bubi">Наверх ↑</a></div>
-    </div>
-  </footer>
-
-  <dialog class="gallery-lightbox" aria-label="Полноэкранный просмотр галереи">
-    <div class="gallery-lightbox__shell">
-      <button class="gallery-lightbox__close" type="button" aria-label="Закрыть галерею" data-lightbox-close>×</button>
-      <button class="gallery-lightbox__button gallery-lightbox__button--prev" type="button" aria-label="Предыдущее изображение" data-lightbox-prev>‹</button>
-      <button class="gallery-lightbox__button gallery-lightbox__button--next" type="button" aria-label="Следующее изображение" data-lightbox-next>›</button>
-      <img class="gallery-lightbox__image" src="" alt="">
-      <p class="gallery-lightbox__caption"></p>
-    </div>
-  </dialog>
-
-  <script src="js/main.js?v=8"></script>
-  <script src="js/bubi.js?v=1"></script>
+  <footer><div class="container footer-inner"><p>© <span id="year"></span> · Сделано с любовью к играм</p><div class="footer-links"><a href="index.html#projects">Все проекты</a><a href="#bubi">Наверх ↑</a></div></div></footer>
+  <dialog class="gallery-lightbox" aria-label="Полноэкранный просмотр галереи"><div class="gallery-lightbox__shell"><button class="gallery-lightbox__close" type="button" aria-label="Закрыть галерею" data-lightbox-close>×</button><button class="gallery-lightbox__button gallery-lightbox__button--prev" type="button" aria-label="Предыдущее изображение" data-lightbox-prev>‹</button><button class="gallery-lightbox__button gallery-lightbox__button--next" type="button" aria-label="Следующее изображение" data-lightbox-next>›</button><img class="gallery-lightbox__image" src="" alt=""><p class="gallery-lightbox__caption"></p></div></dialog>
+  <script src="js/main.js?v=9"></script>
+  <script src="js/bubi.js?v=2"></script>
 </body>
 </html>
