@@ -1,0 +1,40 @@
+/* Логотип Bubi на странице проекта. */
+.bubi-title-logo {
+  display: block;
+  width: min(100%, 540px);
+  max-width: 100%;
+  height: auto;
+  margin: -6px auto 18px;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .22));
+}
+
+.theme-light .bubi-title-logo {
+  filter: drop-shadow(0 12px 20px rgba(85, 104, 120, .16));
+}
+
+/* На странице Bubi в шапке две иконки: GitHub и почта.
+   Эти селекторы намеренно чуть специфичнее правил language.css,
+   чтобы переключатели не накладывались на GitHub. */
+@media (min-width: 821px) {
+  html .bubi-page .theme-toggle {
+    right: 116px;
+  }
+
+  html .bubi-page .language-switcher {
+    right: 168px;
+  }
+}
+
+@media (max-width: 900px) {
+  .bubi-title-logo {
+    width: min(100%, 500px);
+    margin: -4px auto 16px;
+  }
+}
+
+@media (max-width: 680px) {
+  .bubi-title-logo {
+    width: min(100%, 420px);
+    margin: 0 auto 14px;
+  }
+}

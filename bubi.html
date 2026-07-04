@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/style.css?v=6">
   <link rel="stylesheet" href="css/theme.css?v=7">
   <link rel="stylesheet" href="css/bubi.css?v=2">
+  <link rel="stylesheet" href="css/bubi-logo.css?v=4">
   <link rel="stylesheet" href="css/language.css?v=3">
   <script>
     try {
@@ -38,8 +39,27 @@
         <span class="language-switcher__divider" aria-hidden="true">/</span>
         <a href="bubi-en.html" lang="en" hreflang="en">EN</a>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Включить светлую тему" aria-pressed="false" title="Светлая тема"><span aria-hidden="true">◐</span></button>
-      <div class="header-links"><a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">GH</a></div>
+      <button class="theme-toggle" type="button" aria-label="Включить светлую тему" aria-pressed="false" title="Светлая тема">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.1 15.2A8.5 8.5 0 0 1 8.8 3.9 8.5 8.5 0 1 0 20.1 15.2Z"></path>
+        </svg>
+      </button>
+      <div class="header-links">
+        <a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.3 6.84 9.65.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.36 1.11 2.93.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .85-.28 2.76 1.05A9.2 9.2 0 0 1 12 6.55c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.56 1.41.21 2.46.11 2.72.64.72 1.03 1.63 1.03 2.75 0 3.92-2.35 4.78-4.58 5.04.36.32.68.93.68 1.88v2.79c0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/>
+          </svg>
+        </a>
+        <a href="mailto:tkachikaev@gmail.com" aria-label="Написать письмо" title="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3.5 5.5h17A1.5 1.5 0 0 1 22 7v10a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 17V7a1.5 1.5 0 0 1 1.5-1.5Zm0 2.2v.25l8.5 5.3 8.5-5.3V7.7L12 13 3.5 7.7Z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -50,7 +70,7 @@
         <div class="bubi-hero-grid">
           <div class="reveal">
             <p class="eyebrow">BUBI · В РАЗРАБОТКЕ</p>
-            <h1 class="bubi-title"><span class="bubi-title__green">Bu</span><span class="bubi-title__orange">bi</span></h1>
+            <img class="bubi-title-logo" src="assets/logos/bubi-logo.webp" alt="Bubi" fetchpriority="high" decoding="async">
             <p class="bubi-summary">Яркий 2D-платформер о зелёной птице, которая путешествует по игровым мирам, ищет секреты и учится справляться с тем, что встречает на пути.</p>
             <div class="bubi-status-row" aria-label="Статус проекта">
               <span class="bubi-status">Лесной мир</span>
