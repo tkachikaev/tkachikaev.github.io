@@ -727,3 +727,69 @@ html.theme-light .bubi-enemy-card__tags li {
     padding: 20px;
   }
 }
+
+
+/* Enemy animation preview */
+.bubi-enemy-card__media {
+  position: relative;
+}
+
+.bubi-enemy-play {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 999px;
+  background: rgba(9, 14, 20, .72);
+  color: #f4f6f7;
+  font: 800 10px/1 "Space Grotesk", sans-serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bubi-enemy-play:hover,
+.bubi-enemy-play:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.bubi-enemy-play:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.bubi-enemy-play__icon {
+  display: grid;
+  width: 14px;
+  height: 14px;
+  place-items: center;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.bubi-enemy-card__media.is-playing .bubi-enemy-play {
+  border-color: rgba(255, 156, 42, .55);
+  background: rgba(255, 156, 42, .12);
+}
+
+html.theme-light .bubi-enemy-play {
+  border-color: rgba(28, 39, 48, .14);
+  background: rgba(255, 255, 255, .82);
+  color: #1c2730;
+}
+
+html.theme-light .bubi-enemy-play:hover,
+html.theme-light .bubi-enemy-play:focus-visible {
+  border-color: var(--accent);
+  color: #b65d08;
+}

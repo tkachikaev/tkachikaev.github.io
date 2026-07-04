@@ -114,8 +114,12 @@
 
         <div class="bubi-enemies-grid">
           <article class="bubi-enemy-card reveal">
-            <div class="bubi-enemy-card__media">
-              <img src="assets/gallery/slime-idle.webp" alt="Анимированный враг Слайм" loading="lazy" decoding="async">
+            <div class="bubi-enemy-card__media" data-enemy-preview>
+              <img src="assets/gallery/slime-idle-poster.webp" data-poster="assets/gallery/slime-idle-poster.webp" data-animated="assets/gallery/slime-idle.webp" alt="Враг Слайм" loading="lazy" decoding="async">
+              <button class="bubi-enemy-play" type="button" data-enemy-play aria-label="Запустить анимацию Слайма" aria-pressed="false">
+                <span class="bubi-enemy-play__icon" aria-hidden="true">▶</span>
+                <span data-enemy-play-label>Оживить</span>
+              </button>
             </div>
             <div class="bubi-enemy-card__content">
               <p class="bubi-enemy-card__eyebrow">ОБЫЧНЫЙ ВРАГ</p>
@@ -129,8 +133,12 @@
             </div>
           </article>
           <article class="bubi-enemy-card bubi-enemy-card--biter reveal delay-1">
-            <div class="bubi-enemy-card__media">
-              <img src="assets/gallery/biter-fly.webp" alt="Анимированный враг Кусач" loading="lazy" decoding="async">
+            <div class="bubi-enemy-card__media" data-enemy-preview>
+              <img src="assets/gallery/biter-fly-poster.webp" data-poster="assets/gallery/biter-fly-poster.webp" data-animated="assets/gallery/biter-fly.webp" alt="Враг Кусач" loading="lazy" decoding="async">
+              <button class="bubi-enemy-play" type="button" data-enemy-play aria-label="Запустить анимацию Кусача" aria-pressed="false">
+                <span class="bubi-enemy-play__icon" aria-hidden="true">▶</span>
+                <span data-enemy-play-label>Оживить</span>
+              </button>
             </div>
             <div class="bubi-enemy-card__content">
               <p class="bubi-enemy-card__eyebrow">ЛЕТАЮЩИЙ ПРОТИВНИК</p>
@@ -185,6 +193,35 @@
   </dialog>
 
   <script src="js/main.js?v=8"></script>
+
+  <script>
+    // Enemy animation previews
+    document.querySelectorAll("[data-enemy-preview]").forEach(preview => {
+      const image = preview.querySelector("img[data-animated]");
+      const button = preview.querySelector("[data-enemy-play]");
+      const label = button?.querySelector("[data-enemy-play-label]");
+      if (!image || !button || !label) return;
+
+      const playLabel = label.textContent.trim();
+      const resetLabel = "Сбросить";
+
+      button.addEventListener("click", () => {
+        const isPlaying = preview.classList.toggle("is-playing");
+
+        if (isPlaying) {
+          image.src = image.dataset.animated;
+          button.setAttribute("aria-pressed", "true");
+          button.querySelector(".bubi-enemy-play__icon").textContent = "↻";
+          label.textContent = resetLabel;
+        } else {
+          image.src = image.dataset.poster;
+          button.setAttribute("aria-pressed", "false");
+          button.querySelector(".bubi-enemy-play__icon").textContent = "▶";
+          label.textContent = playLabel;
+        }
+      });
+    });
+  </script>
   <script src="js/bubi.js?v=1"></script>
 </body>
 </html>
