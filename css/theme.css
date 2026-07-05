@@ -13,10 +13,37 @@ html.theme-light {
   --header-shadow: 0 8px 24px rgba(44, 55, 62, .08);
 }
 
-.brand { position: relative; display: flex; align-items: center; width: 58px; height: 52px; }
+/* Clean geometric [T] mark. It inherits the active theme palette. */
+.brand { position: relative; display: block; width: 58px; height: 52px; }
 .brand img { display: none !important; }
-.brand::after { content: "[T]"; display: block; font: 700 43px/1 "Space Grotesk", sans-serif; letter-spacing: -.16em; background: linear-gradient(90deg, var(--text) 0 25%, var(--accent) 25% 74%, var(--text) 74%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.brand:hover::after { background: linear-gradient(90deg, var(--accent) 0 25%, var(--text) 25% 74%, var(--accent) 74%); -webkit-background-clip: text; background-clip: text; }
+.brand::before,
+.brand::after { content: ""; position: absolute; display: block; }
+.brand::before {
+  inset: 5px 1px;
+  background:
+    linear-gradient(var(--text), var(--text)) left top / 13px 3px no-repeat,
+    linear-gradient(var(--text), var(--text)) left center / 3px 100% no-repeat,
+    linear-gradient(var(--text), var(--text)) left bottom / 13px 3px no-repeat,
+    linear-gradient(var(--text), var(--text)) right top / 13px 3px no-repeat,
+    linear-gradient(var(--text), var(--text)) right center / 3px 100% no-repeat,
+    linear-gradient(var(--text), var(--text)) right bottom / 13px 3px no-repeat;
+  opacity: .94;
+  transition: background .2s ease, opacity .2s ease;
+}
+.brand::after {
+  top: 10px;
+  left: 50%;
+  width: 22px;
+  height: 32px;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(var(--accent), var(--accent)) center top / 22px 5px no-repeat,
+    linear-gradient(var(--accent), var(--accent)) center top / 5px 32px no-repeat;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 28%, transparent));
+  transition: transform .2s ease, filter .2s ease;
+}
+.brand:hover::before { opacity: 1; }
+.brand:hover::after { transform: translateX(-50%) translateY(-1px); filter: drop-shadow(0 0 11px color-mix(in srgb, var(--accent) 48%, transparent)); }
 
 html.theme-light body::before {
   background:
@@ -51,7 +78,8 @@ html.theme-light .campfire-media::after { background: linear-gradient(90deg, tra
 html.theme-light .campfire-copy { border-left-color: rgba(255, 255, 255, .5); background: linear-gradient(135deg, rgba(255, 255, 255, .56), rgba(237, 244, 245, .38)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .42); }
 @media (max-width: 680px) {
   .brand { width: 49px; height: 44px; }
-  .brand::after { font-size: 37px; }
+  .brand::before { inset: 5px 1px; }
+  .brand::after { top: 9px; width: 19px; height: 27px; background: linear-gradient(var(--accent), var(--accent)) center top / 19px 4px no-repeat, linear-gradient(var(--accent), var(--accent)) center top / 4px 27px no-repeat; }
   html.theme-light .menu-toggle span { background: #1c2730; }
   html.theme-light .main-nav { background: rgba(248, 245, 239, .98); }
   html.theme-light .campfire-copy { border-color: rgba(255, 255, 255, .64); background: linear-gradient(135deg, rgba(255, 255, 255, .56), rgba(240, 247, 248, .36)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .48), 0 18px 34px rgba(44, 55, 62, .12); }
