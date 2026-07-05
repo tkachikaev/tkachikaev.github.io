@@ -11,44 +11,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=7">
   <link rel="stylesheet" href="css/theme.css?v=7">
   <link rel="stylesheet" href="css/bubi.css?v=1">
   <link rel="stylesheet" href="css/language.css?v=3">
-  <style>
-    .project-card { position: relative; border-radius: 16px; transition: transform .25s ease; }
-    .project-card--interactive:hover { transform: translateY(-3px); }
-    .project-card-overlay-link, .project-card-overlay-button { position: absolute; inset: 0; z-index: 3; border: 0; border-radius: 16px; background: transparent; cursor: pointer; padding: 0; margin: 0; }
-    .project-card-overlay-link:focus-visible, .project-card-overlay-button:focus-visible, .project-modal__close:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-    .project-card--interactive .project-info h3 { transition: color .2s ease; }
-    .project-card--interactive:hover .project-info h3 { color: var(--accent); }
-    .project-card--interactive:hover img { box-shadow: 0 20px 34px rgba(0, 0, 0, .16); }
-    .project-modal[hidden] { display: none; }
-    .project-modal { position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 18px; }
-    .project-modal__backdrop { position: absolute; inset: 0; background: rgba(7, 11, 16, .34); backdrop-filter: blur(18px) saturate(135%); -webkit-backdrop-filter: blur(18px) saturate(135%); }
-    .project-modal__dialog { position: relative; z-index: 1; width: min(100%, 392px); padding: 22px 20px 20px; border: 1px solid rgba(255, 255, 255, .18); border-radius: 22px; background: linear-gradient(135deg, rgba(20, 27, 35, .70), rgba(11, 16, 22, .58)); box-shadow: 0 22px 52px rgba(0, 0, 0, .26); color: var(--text); backdrop-filter: blur(28px) saturate(155%); -webkit-backdrop-filter: blur(28px) saturate(155%); }
-    .project-modal__close { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid rgba(255, 255, 255, .1); border-radius: 50%; background: rgba(255, 255, 255, .04); color: #eef0f2; cursor: pointer; transition: transform .2s, border-color .2s, color .2s; }
-    .project-modal__close:hover { transform: translateY(-1px); border-color: var(--accent); color: var(--accent); }
-    .project-modal__eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    .project-modal__title { margin: 0; font: 700 clamp(28px, 5vw, 38px) / 1.02 "Space Grotesk", sans-serif; letter-spacing: -.04em; }
-    .project-modal__status { display: inline-flex; align-items: center; gap: 8px; margin: 14px 0 0; padding: 7px 11px; border: 1px solid rgba(255, 255, 255, .1); border-radius: 999px; background: rgba(255, 255, 255, .04); color: #d7dce1; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; }
-    .project-modal__status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px rgba(255, 156, 42, .45); }
-    .project-modal__body { margin: 16px 0 0; color: #c0c7ce; font-size: 15px; line-height: 1.7; }
-    .project-modal__actions { display: flex; justify-content: flex-end; margin-top: 18px; }
-    .project-modal__button { display: inline-flex; align-items: center; gap: 10px; padding: 11px 16px; border: 0; border-radius: 12px; background: linear-gradient(135deg, var(--accent2), var(--accent)); color: #16110a; font-size: 13px; font-weight: 800; cursor: pointer; transition: transform .2s; }
-    .project-modal__button:hover { transform: translateY(-2px); }
-    body.modal-open { overflow: hidden; }
-    .theme-light .project-modal__backdrop { background: rgba(248, 250, 252, .40); }
-    .theme-light .project-modal__dialog { border-color: rgba(17, 24, 39, .10); background: linear-gradient(135deg, rgba(255, 255, 255, .76), rgba(245, 248, 251, .64)); box-shadow: 0 22px 52px rgba(32, 44, 57, .12); color: #18222d; }
-    .theme-light .project-modal__close { border-color: rgba(17, 24, 39, .10); background: rgba(255, 255, 255, .48); color: #24303c; }
-    .theme-light .project-modal__title { color: #16212b; }
-    .theme-light .project-modal__status { border-color: rgba(17, 24, 39, .08); background: rgba(255, 255, 255, .64); color: #4b5763; }
-    .theme-light .project-modal__body { color: #55606c; }
-    .theme-light .project-modal__button { border: 1px solid rgba(201, 132, 40, .18); background: linear-gradient(135deg, #f7d6ae, #eda450); color: #5f3405; box-shadow: 0 14px 28px rgba(223, 145, 43, .20); }
-    .theme-light .project-modal__button:hover { box-shadow: 0 16px 30px rgba(223, 145, 43, .24); }
-    .brand img { display: block; width: 38px; height: 38px; object-fit: contain; }
-    @media (max-width: 680px) { .project-card-overlay-link, .project-card-overlay-button { border-radius: 13px; } .project-modal { padding: 14px; } .project-modal__dialog { padding: 20px 18px 18px; border-radius: 18px; } .brand img { width: 34px; height: 34px; } }
-  </style>
+  <link rel="stylesheet" href="css/project-modal.css?v=2">
+  <link rel="stylesheet" href="css/hero-art-cta.css?v=1">
   <script>
     try { if (localStorage.getItem("site-theme") === "light") { document.documentElement.classList.add("theme-light"); document.documentElement.style.colorScheme = "light"; } } catch {}
   </script>
@@ -60,31 +28,56 @@
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="На главную"><img src="assets/logo-t.svg" alt="Тимур"></a>
       <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
-      <nav class="main-nav" aria-label="Основная навигация"><a href="#top">Главная</a><a href="#about">Обо мне</a><a href="#projects">Проекты</a><a href="#contact">Контакты</a></nav>
-      <nav class="language-switcher" aria-label="Выбор языка"><a href="index.html" lang="ru" hreflang="ru" aria-current="page">RU</a><span class="language-switcher__divider" aria-hidden="true">/</span><a href="en.html" lang="en" hreflang="en">EN</a></nav>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="index.html#top">Главная</a>
+        <a href="index.html#about">Обо мне</a>
+        <a href="index.html#projects">Проекты</a>
+        <a href="index.html#contact">Контакты</a>
+      </nav>
+      <nav class="language-switcher" aria-label="Выбор языка">
+        <a href="index.html" lang="ru" hreflang="ru" aria-current="page">RU</a>
+        <span class="language-switcher__divider" aria-hidden="true">/</span>
+        <a href="en.html" lang="en" hreflang="en">EN</a>
+      </nav>
       <button class="theme-toggle" type="button" aria-label="Включить светлую тему" aria-pressed="false" title="Светлая тема"><svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg><svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 15.2A8.5 8.5 0 0 1 8.8 3.9 8.5 8.5 0 1 0 20.1 15.2Z"></path></svg></button>
-      <div class="header-links"><a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.3 6.84 9.65.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.36 1.11 2.93.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .85-.28 2.76 1.05A9.2 9.2 0 0 1 12 6.55c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.56 1.41.21 2.46.11 2.72.64.72 1.03 1.63 1.03 2.75 0 3.92-2.35 4.78-4.58 5.04.36.32.68.93.68 1.88v2.79c0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg></a><a href="mailto:tkachikaev@gmail.com" aria-label="Написать письмо" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h17A1.5 1.5 0 0 1 22 7v10a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 17V7a1.5 1.5 0 0 1 1.5-1.5Zm0 2.2v.25l8.5 5.3 8.5-5.3V7.7L12 13 3.5 7.7Z"/></svg></a></div>
+      <div class="header-links">
+        <a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.3 6.84 9.65.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.36 1.11 2.93.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .85-.28 2.76 1.05A9.2 9.2 0 0 1 12 6.55c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.56 1.41.21 2.46.11 2.72.64.72 1.03 1.63 1.03 2.75 0 3.92-2.35 4.78-4.58 5.04.36.32.68.93.68 1.88v2.79c0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg></a>
+        <a href="mailto:tkachikaev@gmail.com" aria-label="Написать письмо" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h17A1.5 1.5 0 0 1 22 7v10a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 17V7a1.5 1.5 0 0 1 1.5-1.5Zm0 2.2v.25l8.5 5.3 8.5-5.3V7.7L12 13 3.5 7.7Z"/></svg></a>
+      </div>
     </div>
   </header>
   <main>
-    <section class="hero" id="top"><div class="container hero-grid"><div class="hero-copy reveal"><p class="eyebrow">Независимый горе-разработчик игр.</p><h1>Делаю игры,<br>какие <em>хочу.</em></h1><p class="intro">Придумываю идеи, собираю миры и механики, пробую новое и делаю игры, в которые самому было бы интересно играть.</p><div class="hero-actions"><a class="button button-main" href="#projects">Смотреть проекты <span>→</span></a><a class="text-link" href="#about">Обо мне <span>→</span></a></div><p class="scroll-hint"><span class="mouse"></span>Листай вниз</p></div><figure class="hero-art reveal delay-1"><img src="assets/gallery/topimage.jpg" alt="Игровой лесной мир" fetchpriority="high" decoding="async"><figcaption><i></i>Игра в разработке</figcaption></figure></div></section>
+    <section class="hero" id="top"><div class="container hero-grid"><div class="hero-copy reveal"><p class="eyebrow">Независимый горе-разработчик игр.</p><h1>Делаю игры,<br>какие <em>хочу.</em></h1><p class="intro">Придумываю идеи, собираю миры и механики, пробую новое и делаю игры, в которые самому было бы интересно играть.</p><div class="hero-actions"><a class="button button-main" href="#projects">Смотреть проекты <span>→</span></a><a class="text-link" href="#about">Обо мне <span>→</span></a></div><p class="scroll-hint"><span class="mouse"></span>Листай вниз</p></div><figure class="hero-art reveal delay-1"><img src="assets/gallery/topimage.jpg" alt="Игровой лесной мир" fetchpriority="high" decoding="async"><figcaption><i></i>Игра в разработке</figcaption>
+          <a class="hero-art-cta" href="bubi.html"><span>Подробнее о Bubi</span><b aria-hidden="true">→</b></a></figure></div></section>
     <section class="about-section" id="about"><div class="container about-grid"><div class="about-image reveal"><img src="assets/avatar.png" alt="Фото автора сайта" loading="lazy" decoding="async"></div><div class="about-copy reveal delay-1"><p class="eyebrow">ОБО МНЕ</p><h2>Моё личное<br>игровое пространство.</h2><p>Тут будут собираться проекты, прототипы, случайные идеи и всё, что хочется сохранить или показать. Без громких обещаний — просто путь, который мне нравится проходить.</p><a class="text-link" href="https://github.com/tkachikaev" target="_blank" rel="noreferrer">Открыть GitHub <span>→</span></a></div></div></section>
-    <section class="projects-section" id="projects"><div class="container"><div class="section-heading reveal"><div><p class="eyebrow">ПРОЕКТЫ</p><h2>Что в работе</h2></div></div><div class="projects-grid">
-      <article class="project-card project-card--interactive reveal delay-3"><a class="project-card-overlay-link" href="bubi.html" aria-label="Открыть страницу проекта Bubi"></a><img src="assets/gallery/bubi.jpg" alt="Bubi — зелёная птица в лесном мире" loading="lazy" decoding="async"><div class="project-info"><h3>Bubi</h3><p>2D-платформер. В разработке.</p><span class="status yellow">В разработке</span></div></article>
-      <article class="project-card project-card--interactive reveal delay-1"><button class="project-card-overlay-button" type="button" data-project-name="Desert Ruins" data-project-status="Идея" aria-label="Открыть карточку проекта Desert Ruins"></button><img src="assets/gallery/red-sands.jpg" alt="Пустынный мир" loading="lazy" decoding="async"><div class="project-info"><h3>Desert Ruins</h3><p>Исследование, загадки, секреты.</p><span class="status blue">Идея</span></div></article>
-      <article class="project-card project-card--interactive reveal delay-2"><button class="project-card-overlay-button" type="button" data-project-name="Star Drift" data-project-status="Концепт" aria-label="Открыть карточку проекта Star Drift"></button><img src="assets/gallery/deep-night.jpg" alt="Космический мир" loading="lazy" decoding="async"><div class="project-info"><h3>Star Drift</h3><p>Аркадный шутер в космосе.</p><span class="status purple">Концепт</span></div></article>
-      <article class="project-card project-card--interactive reveal"><button class="project-card-overlay-button" type="button" data-project-name="Forest Quest" data-project-status="Прототип" aria-label="Открыть карточку проекта Forest Quest"></button><img src="assets/gallery/warm-forest.jpg" alt="Лесной мир" loading="lazy" decoding="async"><div class="project-info"><h3>Forest Quest</h3><p>Лесное приключение с тайными тропами.</p><span class="status">Прототип</span></div></article>
-      <article class="project-card project-card--interactive reveal delay-1"><button class="project-card-overlay-button" type="button" data-project-name="Signal Bloom" data-project-status="Концепт" aria-label="Открыть карточку проекта Signal Bloom"></button><img src="assets/gallery/signal-bloom.jpg" alt="Светящийся сад" loading="lazy" decoding="async"><div class="project-info"><h3>Signal Bloom</h3><p>Светящийся сад и древние механизмы.</p><span class="status purple">Концепт</span></div></article>
-      <article class="project-card project-card--interactive reveal delay-2"><button class="project-card-overlay-button" type="button" data-project-name="Cloudline Courier" data-project-status="Идея" aria-label="Открыть карточку проекта Cloudline Courier"></button><img src="assets/gallery/cloudline-courier.jpg" alt="Воздушный курьер в облаках" loading="lazy" decoding="async"><div class="project-info"><h3>Cloudline Courier</h3><p>Небесные острова и воздушная доставка.</p><span class="status">Идея</span></div></article>
-      <article class="project-card project-card--interactive reveal"><button class="project-card-overlay-button" type="button" data-project-name="Tiny Orbit" data-project-status="Идея" aria-label="Открыть карточку проекта Tiny Orbit"></button><img src="assets/gallery/tiny-orbit.jpg" alt="Маленькая планета в космосе" loading="lazy" decoding="async"><div class="project-info"><h3>Tiny Orbit</h3><p>Карманные планеты, прыжки и орбиты.</p><span class="status blue">Идея</span></div></article>
-    </div><figure class="campfire-banner reveal"><div class="campfire-media"><img src="assets/gallery/campfire-forest-v1.jpg" alt="Ночной игровой лес" loading="lazy" decoding="async"></div><figcaption class="campfire-copy"><svg class="campfire-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2 4.55 12.9a4.62 4.62 0 0 1 0-6.56 4.79 4.79 0 0 1 6.69 0L12 7.09l.76-.75a4.79 4.79 0 0 1 6.69 0 4.62 4.62 0 0 1 0 6.56Z" /></svg><blockquote><p>Делаю игры по фану. Такие, в которые мне самому хотелось бы играть.</p></blockquote></figcaption></figure></div></section>
+    <section class="projects-section" id="projects"><div class="container"><div class="section-heading reveal"><div><p class="eyebrow">ПРОЕКТЫ</p><h2>Что в работе</h2></div></div><div class="projects-grid" data-projects-grid></div><figure class="campfire-banner reveal"><div class="campfire-media"><img src="assets/gallery/campfire-forest-v1.jpg" alt="Ночной игровой лес" loading="lazy" decoding="async"></div><figcaption class="campfire-copy"><svg class="campfire-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2 4.55 12.9a4.62 4.62 0 0 1 0-6.56 4.79 4.79 0 0 1 6.69 0L12 7.09l.76-.75a4.79 4.79 0 0 1 6.69 0 4.62 4.62 0 0 1 0 6.56Z" /></svg><blockquote><p>Делаю игры по фану. Такие, в которые мне самому хотелось бы играть.</p></blockquote></figcaption></figure></div></section>
     <section class="contact-section" id="contact"><div class="container contact-card reveal"><p class="eyebrow">КОНТАКТЫ</p><h2>Загляни в GitHub.</h2><p>Там будут код, эксперименты и всё, что постепенно превращается в игры.</p><a class="button button-main" href="https://github.com/tkachikaev" target="_blank" rel="noreferrer">Открыть GitHub <span>→</span></a></div></section>
   </main>
-  <div class="project-modal" id="project-modal" hidden aria-hidden="true"><div class="project-modal__backdrop" data-modal-close></div><div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title"><button class="project-modal__close" type="button" data-modal-close aria-label="Закрыть окно">✕</button><p class="project-modal__eyebrow">ПРОЕКТ</p><h3 class="project-modal__title" id="project-modal-title" data-project-modal-title>Desert Ruins</h3><div class="project-modal__status" data-project-modal-status>Идея</div><p class="project-modal__body" data-project-modal-body>Описание проекта появится позже.</p><div class="project-modal__actions"><button class="project-modal__button" type="button" data-modal-close>Понятно</button></div></div></div>
-  <footer><div class="container footer-inner"><p>© <span id="year"></span> · Сделано с любовью к играм</p><div class="footer-links"><a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer">GitHub</a><a href="#top">Наверх ↑</a></div></div></footer>
-  <script src="js/main.js?v=8"></script>
-  <script>
-    (() => { const modal = document.getElementById("project-modal"); if (!modal) return; const titleElement = modal.querySelector("[data-project-modal-title]"); const statusElement = modal.querySelector("[data-project-modal-status]"); const textElement = modal.querySelector("[data-project-modal-body]"); const triggers = [...document.querySelectorAll(".project-card-overlay-button")]; const closeControls = [...modal.querySelectorAll("[data-modal-close]")]; const defaultText = "Описание проекта появится позже."; function openModal(projectName, projectStatus) { titleElement.textContent = projectName || "Проект"; statusElement.textContent = projectStatus || "Скоро"; textElement.textContent = defaultText; modal.hidden = false; modal.setAttribute("aria-hidden", "false"); document.body.classList.add("modal-open"); } function closeModal() { modal.hidden = true; modal.setAttribute("aria-hidden", "true"); document.body.classList.remove("modal-open"); } triggers.forEach(trigger => { trigger.addEventListener("click", () => { openModal(trigger.dataset.projectName, trigger.dataset.projectStatus); }); }); closeControls.forEach(control => { control.addEventListener("click", closeModal); }); document.addEventListener("keydown", event => { if (event.key === "Escape" && !modal.hidden) closeModal(); }); })();
-  </script>
+  <dialog class="project-modal" id="project-modal" aria-labelledby="project-modal-title">
+    <div class="project-modal__dialog">
+      <button class="project-modal__close" type="button" data-modal-close aria-label="Закрыть окно">✕</button>
+      <p class="project-modal__eyebrow">ПРОЕКТ</p>
+      <h3 class="project-modal__title" id="project-modal-title" data-project-modal-title>Desert Ruins</h3>
+      <div class="project-modal__status" data-project-modal-status>Идея</div>
+      <p class="project-modal__body" data-project-modal-body>Описание проекта появится позже.</p>
+      <div class="project-modal__actions"><button class="project-modal__button" type="button" data-modal-close>Понятно</button></div>
+    </div>
+  </dialog>
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> · Сделано с любовью к играм</p>
+      <div class="footer-links"><a href="https://github.com/tkachikaev" target="_blank" rel="noreferrer">GitHub</a><a href="#top">Наверх ↑</a></div>
+    </div>
+  </footer>
+  <script src="js/site-config.js?v=1"></script>
+  <script src="js/theme.js?v=1"></script>
+  <script src="js/navigation.js?v=1"></script>
+  <script src="js/scroll-state.js?v=1"></script>
+  <script src="js/section-navigation.js?v=1"></script>
+  <script src="js/projects-data.js?v=1"></script>
+  <script src="js/projects-render.js?v=1"></script>
+  <script src="js/reveal.js?v=1"></script>
+  <script src="js/footer-year.js?v=1"></script>
+  <script src="js/project-modal.js?v=3"></script>
 </body>
 </html>
