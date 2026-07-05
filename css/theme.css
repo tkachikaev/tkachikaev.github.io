@@ -13,40 +13,22 @@ html.theme-light {
   --header-shadow: 0 8px 24px rgba(44, 55, 62, .08);
 }
 
-/* Header logo is assembled from SVG layers and inherits the active theme palette. */
+/* One SVG file: left half is dark theme, right half is light theme. */
 .brand {
-  position: relative;
   display: block;
   width: 49px;
   height: 44px;
   overflow: hidden;
+  background: url("../assets/logo-t.svg") left center / 200% 100% no-repeat;
   color: transparent;
   font-size: 0;
   line-height: 0;
   letter-spacing: 0;
+  transition: transform .2s ease;
 }
 .brand img { display: none !important; }
-.brand::before,
-.brand::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  display: block;
-  transition: background-color .2s ease, filter .2s ease, transform .2s ease;
-}
-.brand::before {
-  background-color: var(--text);
-  -webkit-mask: url("../assets/logo-brackets.svg") center / contain no-repeat;
-  mask: url("../assets/logo-brackets.svg") center / contain no-repeat;
-}
-.brand::after {
-  background-color: var(--accent);
-  -webkit-mask: url("../assets/logo-t-mark.svg") center / contain no-repeat;
-  mask: url("../assets/logo-t-mark.svg") center / contain no-repeat;
-  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--accent) 28%, transparent));
-}
-.brand:hover::before { background-color: var(--accent); }
-.brand:hover::after { background-color: var(--text); transform: translateY(-1px); filter: none; }
+.brand:hover { transform: translateY(-1px); }
+html.theme-light .brand { background-position: right center; }
 
 html.theme-light body::before {
   background:
