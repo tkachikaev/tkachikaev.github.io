@@ -44,9 +44,12 @@
 │  ├─ project-modal.js     # Диалог карточек-концептов
 │  └─ bubi.js              # Полноэкранная галерея Bubi
 └─ assets/
-   ├─ avatar.png           # Фото автора
-   ├─ favicon.svg          # Иконка сайта
-   └─ gallery/             # Изображения проектов и Bubi
+   ├─ brand/               # favicon и логотипы сайта
+   ├─ site/                # аватар, баннер и общие изображения
+   ├─ projects/
+   │  ├─ bubi/             # обложка, логотип, галерея и анимации Bubi
+   │  └─ concepts/         # обложки концептов
+   └─ social/              # OG-превью для ссылок
 ```
 
 ## Языки
@@ -80,19 +83,18 @@
 
 ### Изображения
 
-Все изображения лежат в `assets/gallery/`.
+Изображения разложены по назначению:
 
-- Главная картинка: `topimage.jpg`.
-- Карточка и обложка Bubi: `bubi.jpg`.
-- Нижний баннер: `campfire-forest-v1.jpg`.
+- логотипы и favicon — `assets/brand/`;
+- аватар и общий баннер — `assets/site/`;
+- Bubi — `assets/projects/bubi/`;
+- обложки концептов — `assets/projects/concepts/`;
+- превью ссылок для Telegram/Discord — `assets/social/`.
 
-Для замены изображения лучше использовать новое имя файла, например:
+Главная картинка Bubi: `assets/projects/bubi/cover.jpg`.  
+Нижний баннер: `assets/site/campfire.jpg`.
 
-```text
-campfire-forest-v2.jpg
-```
-
-После этого заменить путь к нему в `js/projects-data.js` для карточек главной или в нужном HTML-файле для Bubi. Так браузеры не будут показывать старую картинку из кэша.
+При замене изображения лучше использовать новое понятное имя в той же папке проекта, затем заменить путь в HTML или `js/projects-data.js`.
 
 ## Галерея Bubi
 
@@ -186,3 +188,8 @@ site-snapshot-before-bubi
 ```
 
 Они позволяют быстро вернуться к рабочему состоянию, если какая-то крупная правка не подойдёт.
+
+
+## SEO и превью ссылок
+
+Для страниц добавлены canonical, RU/EN hreflang и Open Graph-мета. Превью хранятся в `assets/social/`, а карты сайта — в `sitemap.xml` и `robots.txt`.

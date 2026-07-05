@@ -3,9 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="Bubi is a 2D platformer about a green bird. Game in development.">
+  <meta name="theme-color" content="#101820">
+  <link rel="canonical" href="https://timur.dev/bubi-en.html">
+  <link rel="alternate" hreflang="ru" href="https://timur.dev/bubi.html">
+  <link rel="alternate" hreflang="en" href="https://timur.dev/bubi-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://timur.dev/bubi.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="timur.dev">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta property="og:title" content="Bubi — game in development">
+  <meta property="og:description" content="Bubi is a 2D platformer about a green bird. Game in development.">
+  <meta property="og:url" content="https://timur.dev/bubi-en.html">
+  <meta property="og:image" content="https://timur.dev/assets/social/bubi-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bubi — a green bird in a forest game world">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bubi — game in development">
+  <meta name="twitter:description" content="Bubi is a 2D platformer about a green bird. Game in development.">
+  <meta name="twitter:image" content="https://timur.dev/assets/social/bubi-og.jpg">
+  <meta name="twitter:image:alt" content="Bubi — a green bird in a forest game world">
   <title>Bubi — game in development</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
@@ -26,7 +50,7 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="en.html#top" aria-label="Home"><img src="assets/logo-t.svg" alt="Тимур"></a>
+      <a class="brand" href="en.html#top" aria-label="Home"><img src="assets/brand/logo-t.svg" alt="Тимур"></a>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="en.html#top" class="home-link">Home</a>
@@ -54,7 +78,7 @@
         <div class="bubi-hero-grid">
           <div class="reveal">
             <p class="eyebrow">BUBI · IN DEVELOPMENT</p>
-            <img class="bubi-title-logo" src="assets/logos/bubi-logo.webp" alt="Bubi" fetchpriority="high" decoding="async">
+            <img class="bubi-title-logo" src="assets/projects/bubi/logo.webp" alt="Bubi" fetchpriority="high" decoding="async">
             <p class="bubi-summary">A bright 2D platformer about a green bird that travels through game worlds, searches for secrets and learns to handle whatever lies ahead.</p>
             <div class="bubi-status-row" aria-label="Project status">
               <span class="bubi-status">Forest world</span>
@@ -63,7 +87,7 @@
             </div>
           </div>
           <figure class="bubi-cover reveal delay-1">
-            <img src="assets/gallery/bubi.jpg" alt="Bubi in a forest game world" fetchpriority="high" decoding="async">
+            <img src="assets/projects/bubi/cover.jpg" alt="Bubi in a forest game world" fetchpriority="high" decoding="async">
             <figcaption>First game world</figcaption>
           </figure>
         </div>
@@ -119,7 +143,7 @@
         <div class="bubi-enemies-grid">
           <article class="bubi-enemy-card reveal">
             <div class="bubi-enemy-card__media" data-enemy-preview>
-              <img src="assets/gallery/slime-idle-poster.webp" data-poster="assets/gallery/slime-idle-poster.webp" data-animated="assets/gallery/slime-idle.webp" alt="Slime enemy" loading="lazy" decoding="async">
+              <img src="assets/projects/bubi/enemies/slime-idle-poster.webp" data-poster="assets/projects/bubi/enemies/slime-idle-poster.webp" data-animated="assets/projects/bubi/enemies/slime-idle.webp" alt="Slime enemy" loading="lazy" decoding="async">
               <button class="bubi-enemy-play" type="button" data-enemy-play aria-label="Play Slime animation" aria-pressed="false">
                 <span class="bubi-enemy-play__icon" aria-hidden="true">▶</span>
                 <span data-enemy-play-label>Play</span>
@@ -138,7 +162,7 @@
           </article>
           <article class="bubi-enemy-card bubi-enemy-card--biter reveal delay-1">
             <div class="bubi-enemy-card__media" data-enemy-preview>
-              <img src="assets/gallery/biter-fly-poster.webp" data-poster="assets/gallery/biter-fly-poster.webp" data-animated="assets/gallery/biter-fly.webp" alt="Biter enemy" loading="lazy" decoding="async">
+              <img src="assets/projects/bubi/enemies/biter-fly-poster.webp" data-poster="assets/projects/bubi/enemies/biter-fly-poster.webp" data-animated="assets/projects/bubi/enemies/biter-fly.webp" alt="Biter enemy" loading="lazy" decoding="async">
               <button class="bubi-enemy-play" type="button" data-enemy-play aria-label="Play Biter animation" aria-pressed="false">
                 <span class="bubi-enemy-play__icon" aria-hidden="true">▶</span>
                 <span data-enemy-play-label>Play</span>
@@ -169,11 +193,11 @@
           <p>Click an image to open it large. The gallery will grow as development continues.</p>
         </div>
         <div class="bubi-gallery" aria-label="Bubi project gallery">
-          <button class="bubi-gallery-item reveal" type="button" data-full="assets/gallery/bubi.jpg" data-caption="Bubi in a forest game world" aria-label="Open: Bubi in a forest game world"><img src="assets/gallery/bubi.jpg" alt="Bubi in a forest game world" loading="lazy" decoding="async"></button>
-          <button class="bubi-gallery-item reveal delay-1" type="button" data-full="assets/gallery/warm-forest.jpg" data-caption="A warm forest location and the direction for the first world" aria-label="Open: warm forest location"><img src="assets/gallery/warm-forest.jpg" alt="Warm forest location" loading="lazy" decoding="async"></button>
-          <button class="bubi-gallery-item reveal delay-2" type="button" data-full="assets/gallery/red-sands.jpg" data-caption="A sketch for Bubi’s desert world" aria-label="Open: desert world sketch"><img src="assets/gallery/red-sands.jpg" alt="Desert world sketch" loading="lazy" decoding="async"></button>
-          <button class="bubi-gallery-item reveal" type="button" data-full="assets/gallery/deep-night.jpg" data-caption="The mood of a future space world" aria-label="Open: space world mood"><img src="assets/gallery/deep-night.jpg" alt="Space world mood" loading="lazy" decoding="async"></button>
-          <button class="bubi-gallery-item reveal delay-1" type="button" data-full="assets/gallery/campfire-forest-v1.jpg" data-caption="Night forest — a mood reference for Bubi" aria-label="Open: night forest"><img src="assets/gallery/campfire-forest-v1.jpg" alt="Night-time game forest" loading="lazy" decoding="async"></button>
+          <button class="bubi-gallery-item reveal" type="button" data-full="assets/projects/bubi/cover.jpg" data-caption="Bubi in a forest game world" aria-label="Open: Bubi in a forest game world"><img src="assets/projects/bubi/cover.jpg" alt="Bubi in a forest game world" loading="lazy" decoding="async"></button>
+          <button class="bubi-gallery-item reveal delay-1" type="button" data-full="assets/projects/concepts/forest-quest.jpg" data-caption="A warm forest location and the direction for the first world" aria-label="Open: warm forest location"><img src="assets/projects/concepts/forest-quest.jpg" alt="Warm forest location" loading="lazy" decoding="async"></button>
+          <button class="bubi-gallery-item reveal delay-2" type="button" data-full="assets/projects/concepts/desert-ruins.jpg" data-caption="A sketch for Bubi’s desert world" aria-label="Open: desert world sketch"><img src="assets/projects/concepts/desert-ruins.jpg" alt="Desert world sketch" loading="lazy" decoding="async"></button>
+          <button class="bubi-gallery-item reveal" type="button" data-full="assets/projects/concepts/star-drift.jpg" data-caption="The mood of a future space world" aria-label="Open: space world mood"><img src="assets/projects/concepts/star-drift.jpg" alt="Space world mood" loading="lazy" decoding="async"></button>
+          <button class="bubi-gallery-item reveal delay-1" type="button" data-full="assets/site/campfire.jpg" data-caption="Night forest — a mood reference for Bubi" aria-label="Open: night forest"><img src="assets/site/campfire.jpg" alt="Night-time game forest" loading="lazy" decoding="async"></button>
         </div>
       </div>
     </section>

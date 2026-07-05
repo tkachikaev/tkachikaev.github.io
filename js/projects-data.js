@@ -4,7 +4,7 @@ Site.projects = [
   {
     id: "bubi",
     type: "link",
-    image: "assets/gallery/bubi.jpg",
+    image: "assets/projects/bubi/cover.jpg",
     statusClass: "yellow",
     revealClass: "delay-3",
     ru: {
@@ -27,7 +27,7 @@ Site.projects = [
   {
     id: "desert-ruins",
     type: "modal",
-    image: "assets/gallery/red-sands.jpg",
+    image: "assets/projects/concepts/desert-ruins.jpg",
     statusClass: "blue",
     revealClass: "delay-1",
     ru: {
@@ -50,7 +50,7 @@ Site.projects = [
   {
     id: "star-drift",
     type: "modal",
-    image: "assets/gallery/deep-night.jpg",
+    image: "assets/projects/concepts/star-drift.jpg",
     statusClass: "purple",
     revealClass: "delay-2",
     ru: {
@@ -73,7 +73,7 @@ Site.projects = [
   {
     id: "forest-quest",
     type: "modal",
-    image: "assets/gallery/warm-forest.jpg",
+    image: "assets/projects/concepts/forest-quest.jpg",
     statusClass: "",
     revealClass: "",
     ru: {
@@ -96,7 +96,7 @@ Site.projects = [
   {
     id: "signal-bloom",
     type: "modal",
-    image: "assets/gallery/signal-bloom.jpg",
+    image: "assets/projects/concepts/signal-bloom.jpg",
     statusClass: "purple",
     revealClass: "delay-1",
     ru: {
@@ -119,7 +119,7 @@ Site.projects = [
   {
     id: "cloudline-courier",
     type: "modal",
-    image: "assets/gallery/cloudline-courier.jpg",
+    image: "assets/projects/concepts/cloudline-courier.jpg",
     statusClass: "",
     revealClass: "delay-2",
     ru: {
@@ -142,7 +142,7 @@ Site.projects = [
   {
     id: "tiny-orbit",
     type: "modal",
-    image: "assets/gallery/tiny-orbit.jpg",
+    image: "assets/projects/concepts/tiny-orbit.jpg",
     statusClass: "blue",
     revealClass: "",
     ru: {

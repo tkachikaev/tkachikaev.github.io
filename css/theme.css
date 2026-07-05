@@ -19,7 +19,7 @@ html.theme-light {
   width: 49px;
   height: 44px;
   overflow: hidden;
-  background: url("../assets/logo-t.svg") left center / 200% 100% no-repeat;
+  background: url("../assets/brand/logo-t.svg") left center / 200% 100% no-repeat;
   color: transparent;
   font-size: 0;
   line-height: 0;
