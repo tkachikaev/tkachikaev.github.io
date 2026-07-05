@@ -14,7 +14,7 @@ html.theme-light {
 }
 
 /* Clean geometric [T] mark. It inherits the active theme palette. */
-.brand { position: relative; display: block; width: 58px; height: 52px; }
+.brand { position: relative; display: block; width: 58px; height: 52px; transform: scale(.85); transform-origin: left center; }
 .brand img { display: none !important; }
 .brand::before,
 .brand::after { content: ""; position: absolute; display: block; }
