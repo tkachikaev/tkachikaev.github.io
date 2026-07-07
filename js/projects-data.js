@@ -8,11 +8,11 @@ Site.projects = [
     statusClass: "yellow",
     revealClass: "delay-3",
     ru: {
-      title: "Bubi",
+      title: "Буби",
       summary: "2D-платформер. В разработке.",
       status: "В разработке",
-      alt: "Bubi — зелёная птица в лесном мире",
-      ariaLabel: "Открыть страницу проекта Bubi",
+      alt: "Буби — зелёная птица в лесном мире",
+      ariaLabel: "Открыть страницу проекта Буби",
       href: "bubi.html"
     },
     en: {
