@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-label="Logo">
+  <defs>
+    <mask id="cutout">
+      <rect width="720" height="720" fill="white"/>
+      <circle cx="398" cy="424" r="105" fill="black"/>
+    </mask>
+  </defs>
+
+  <g mask="url(#cutout)" fill="#142337">
+    <!-- vertical stem moved slightly left -->
+    <rect x="188" y="66" width="126" height="390" rx="63"/>
+    <!-- rounded body -->
+    <circle cx="398" cy="410" r="210"/>
+  </g>
+
+  <!-- smile -->
+  <path d="M347 474 C375 500 421 500 449 474"
+        fill="none"
+        stroke="#ff7627"
+        stroke-width="31"
+        stroke-linecap="round"/>
+</svg>

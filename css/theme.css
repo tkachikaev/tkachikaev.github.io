@@ -13,22 +13,26 @@ html.theme-light {
   --header-shadow: 0 8px 24px rgba(44, 55, 62, .08);
 }
 
-/* One SVG file: left half is dark theme, right half is light theme. */
+/* Main site mark: no badge; logo color changes with the active theme. */
 .brand {
-  display: block;
-  width: 49px;
-  height: 44px;
-  overflow: hidden;
-  background: url("../assets/brand/logo-t.svg") left center / 200% 100% no-repeat;
-  color: transparent;
-  font-size: 0;
-  line-height: 0;
-  letter-spacing: 0;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  overflow: visible;
   transition: transform .2s ease;
 }
-.brand img { display: none !important; }
+.brand-logo {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+.brand-logo--light { display: block !important; }
+.brand-logo--dark { display: none !important; }
 .brand:hover { transform: translateY(-1px); }
-html.theme-light .brand { background-position: right center; }
+html.theme-light .brand-logo--light { display: none !important; }
+html.theme-light .brand-logo--dark { display: block !important; }
 
 html.theme-light body::before {
   background:
@@ -62,7 +66,7 @@ html.theme-light .campfire-media { background: #e6dfd4; }
 html.theme-light .campfire-media::after { background: linear-gradient(90deg, transparent 52%, rgba(46, 38, 27, .18)), linear-gradient(0deg, rgba(46, 38, 27, .26), transparent 48%); }
 html.theme-light .campfire-copy { border-left-color: rgba(255, 255, 255, .5); background: linear-gradient(135deg, rgba(255, 255, 255, .56), rgba(237, 244, 245, .38)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .42); }
 @media (max-width: 680px) {
-  .brand { width: 43px; height: 39px; }
+  .brand { width: 43px; height: 43px; }
   html.theme-light .menu-toggle span { background: #1c2730; }
   html.theme-light .main-nav { background: rgba(248, 245, 239, .98); }
   html.theme-light .campfire-copy { border-color: rgba(255, 255, 255, .64); background: linear-gradient(135deg, rgba(255, 255, 255, .56), rgba(240, 247, 248, .36)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .48), 0 18px 34px rgba(44, 55, 62, .12); }
