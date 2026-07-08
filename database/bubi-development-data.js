@@ -1,42 +1,50 @@
 window.BubiDevelopment = {
+  common: {
+    image: "assets/projects/bubi/bubi-worker.png",
+    progress: [
+      { id: "block1", value: 2 },
+      { id: "block2", value: 35 },
+      { id: "block3", value: 10 },
+      { id: "block4", value: 62 },
+      { id: "block5", value: 7 }
+    ]
+  },
   ru: {
     eyebrow: "В РАЗРАБОТКЕ",
-    title: "Буби строит первый мир.",
+    title: "Буби строит проект по блокам.",
     text: "Короткий статус проекта: что сейчас собирается, что уже двигается и какие части постепенно превращаются в игру.",
-    image: "assets/projects/bubi/bubi-worker.png",
     imageAlt: "Буби в строительной каске собирает игровой уровень",
     imageCaption: "Рабочая версия проекта",
     progressTitle: "Текущие задачи",
+    progressLabels: {
+      block1: "Блок 1",
+      block2: "Блок 2",
+      block3: "Блок 3",
+      block4: "Блок 4",
+      block5: "Блок 5"
+    },
     detailsButton: "Подробнее о разработке",
     modalEyebrow: "ДЕВЛОГ",
     modalTitle: "Дневник разработки Буби.",
-    modalText: "Подробные заметки по сайту, механикам, визуалу и первым игровым системам.",
-    items: [
-      { title: "Лесной мир", value: 2 },
-      { title: "Персонаж", value: 35 },
-      { title: "UI", value: 10 },
-      { title: "Первый уровень", value: 62 },
-      { title: "Враги", value: 7 }
-    ]
+    modalText: "Подробные заметки по сайту, механикам, визуалу и первым игровым системам."
   },
   en: {
     eyebrow: "IN DEVELOPMENT",
-    title: "Bubi is building the first world.",
+    title: "Bubi is built block by block.",
     text: "A compact project status: what is being assembled now, what already works, and which parts are slowly becoming a playable game.",
-    image: "assets/projects/bubi/bubi-worker.png",
     imageAlt: "Bubi wearing a construction helmet and building a game level",
     imageCaption: "Work-in-progress build",
     progressTitle: "Current tasks",
+    progressLabels: {
+      block1: "Block 1",
+      block2: "Block 2",
+      block3: "Block 3",
+      block4: "Block 4",
+      block5: "Block 5"
+    },
     detailsButton: "More about development",
     modalEyebrow: "DEVLOG",
     modalTitle: "Bubi development log.",
-    modalText: "Detailed notes about the site, mechanics, visuals and first gameplay systems.",
-    items: [
-      { title: "Forest world", value: 35 },
-      { title: "Character", value: 55 },
-      { title: "UI", value: 25 },
-      { title: "First level", value: 30 },
-      { title: "Enemies", value: 40 }
-    ]
+    modalText: "Detailed notes about the site, mechanics, visuals and first gameplay systems."
   }
 };
