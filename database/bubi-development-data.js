@@ -2,26 +2,26 @@ window.BubiDevelopment = {
   common: {
     image: "assets/projects/bubi/bubi-worker.png",
     progress: [
-      { id: "block1", value: 2 },
-      { id: "block2", value: 35 },
-      { id: "block3", value: 10 },
-      { id: "block4", value: 62 },
-      { id: "block5", value: 7 }
+      { id: "block1", value: 28 },
+      { id: "block2", value: 61 },
+      { id: "block3", value: 70 },
+      { id: "block4", value: 0 },
+      { id: "block5", value: 1 }
     ]
   },
   ru: {
     eyebrow: "В РАЗРАБОТКЕ",
-    title: "Буби строит проект по блокам.",
+    title: "Буби строит свой мир.",
     text: "Короткий статус проекта: что сейчас собирается, что уже двигается и какие части постепенно превращаются в игру.",
     imageAlt: "Буби в строительной каске собирает игровой уровень",
     imageCaption: "Рабочая версия проекта",
     progressTitle: "Текущие задачи",
     progressLabels: {
-      block1: "Блок 1",
-      block2: "Блок 2",
-      block3: "Блок 3",
-      block4: "Блок 4",
-      block5: "Блок 5"
+      block1: "Персонаж",
+      block2: "Первый уровень",
+      block3: "Слайм Враг",
+      block4: "Кусач Враг",
+      block5: "Игра"
     },
     detailsButton: "Подробнее о разработке",
     modalEyebrow: "ДЕВЛОГ",
