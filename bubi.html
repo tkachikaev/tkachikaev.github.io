@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="css/theme.css?v=7">
   <link rel="stylesheet" href="css/bubi.css?v=2">
   <link rel="stylesheet" href="css/bubi-logo.css?v=4">
+  <link rel="stylesheet" href="css/bubi-devlog.css?v=2">
   <link rel="stylesheet" href="css/language.css?v=3">
   <script>
     try {
@@ -113,6 +114,12 @@
             <li><i></i><span>Каждая новая локация будет добавлять свои препятствия, врагов и темп прохождения.</span></li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="bubi-section bubi-development-section" id="development" data-bubi-development-section>
+      <div class="container">
+        <div class="bubi-development-card reveal" data-bubi-development></div>
       </div>
     </section>
 
@@ -232,6 +239,20 @@
     </div>
   </dialog>
 
+  <dialog class="bubi-devlog-modal" data-bubi-devlog-modal aria-labelledby="bubi-devlog-modal-title">
+    <div class="bubi-devlog-modal__shell">
+      <button class="bubi-devlog-modal__close" type="button" data-bubi-devlog-close aria-label="Закрыть дневник разработки">×</button>
+      <div class="bubi-devlog-modal__head">
+        <p class="eyebrow" data-bubi-devlog-modal-eyebrow>ДЕВЛОГ</p>
+        <h3 id="bubi-devlog-modal-title" data-bubi-devlog-modal-title>Дневник разработки Буби.</h3>
+        <p data-bubi-devlog-modal-text>Подробные заметки по проекту.</p>
+      </div>
+      <div class="bubi-devlog-modal__scroll" data-bubi-devlog-scroll tabindex="0" aria-label="Записи дневника разработки Буби">
+        <div class="bubi-devlog-list" data-bubi-devlog-list></div>
+      </div>
+    </div>
+  </dialog>
+
   <script src="js/site-config.js?v=1"></script>
   <script src="js/theme.js?v=1"></script>
   <script src="js/navigation.js?v=1"></script>
@@ -239,6 +260,9 @@
   <script src="js/section-navigation.js?v=1"></script>
   <script src="js/reveal.js?v=1"></script>
   <script src="js/footer-year.js?v=1"></script>
+  <script src="database/bubi-devlog-data.js?v=2"></script>
+  <script src="database/bubi-development-data.js?v=1"></script>
+  <script src="js/bubi-devlog.js?v=2"></script>
 
   <script src="js/enemy-preview.js?v=1"></script>
   <script src="js/bubi.js?v=1"></script>

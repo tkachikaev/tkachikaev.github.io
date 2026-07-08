@@ -1,0 +1,544 @@
+.bubi-development-section {
+  padding-top: 38px;
+  padding-bottom: 42px;
+}
+
+.bubi-development-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(320px, .72fr) minmax(0, 1.28fr);
+  gap: clamp(22px, 4vw, 46px);
+  align-items: stretch;
+  overflow: hidden;
+  padding: clamp(18px, 2.7vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 10% 0, rgba(255, 156, 42, .13), transparent 30%),
+    linear-gradient(145deg, rgba(255, 255, 255, .052), rgba(255, 255, 255, .018));
+  box-shadow: 0 24px 55px rgba(0, 0, 0, .18);
+}
+
+.bubi-development-card::before {
+  content: "";
+  position: absolute;
+  right: -120px;
+  bottom: -130px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(255, 255, 255, .07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.bubi-development-card__info {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bubi-development-card__title {
+  max-width: 430px;
+  margin: 0;
+  color: var(--text);
+  font: 700 clamp(31px, 3.6vw, 49px)/1.02 "Space Grotesk", sans-serif;
+  letter-spacing: -.06em;
+}
+
+.bubi-development-card__text {
+  max-width: 470px;
+  margin: 15px 0 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.bubi-development-progress-title {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.bubi-development-progress {
+  display: grid;
+  gap: 11px;
+}
+
+.bubi-development-progress__item {
+  display: grid;
+  gap: 7px;
+}
+
+.bubi-development-progress__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.bubi-development-progress__top strong {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.bubi-development-progress__top span {
+  color: var(--accent);
+  font: 700 13px/1 "Space Grotesk", sans-serif;
+}
+
+.bubi-development-progress__bar {
+  position: relative;
+  overflow: hidden;
+  height: 10px;
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .095);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+
+.bubi-development-progress__bar::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--progress, 0%);
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ffd36f 0%, var(--accent2) 28%, var(--accent) 72%, #ff7b22 100%);
+  box-shadow: 0 0 18px rgba(255, 156, 42, .42), inset 0 1px 0 rgba(255, 255, 255, .32);
+}
+
+.bubi-development-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: fit-content;
+  margin-top: 20px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .052), rgba(255, 255, 255, .018));
+  color: var(--text);
+  text-shadow: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .14);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .02em;
+  transition: transform .2s, border-color .2s, background .2s, box-shadow .2s, color .2s;
+}
+
+.bubi-development-more:hover {
+  border-color: rgba(255, 156, 42, .42);
+  background: linear-gradient(145deg, rgba(255, 156, 42, .12), rgba(255, 255, 255, .026));
+  box-shadow: 0 16px 36px rgba(255, 156, 42, .14);
+  color: var(--text);
+  transform: translateY(-3px);
+}
+
+.bubi-development-more:focus-visible,
+.bubi-devlog-modal__close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.bubi-development-more b {
+  color: var(--accent);
+  font-size: 18px;
+  line-height: .6;
+}
+
+.bubi-development-card__art {
+  position: relative;
+  z-index: 1;
+  min-height: 330px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .10);
+  border-radius: 20px;
+  background: #101720;
+}
+
+.bubi-development-card__art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.98) contrast(1.02);
+}
+
+.bubi-development-card__art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(8, 12, 16, .16), transparent 35%),
+    linear-gradient(0deg, rgba(8, 12, 16, .34), transparent 52%);
+}
+
+.bubi-development-card__art figcaption {
+  position: absolute;
+  z-index: 1;
+  left: 16px;
+  bottom: 16px;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 999px;
+  background: rgba(8, 12, 16, .56);
+  color: #edf1f4;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.bubi-devlog-modal {
+  width: min(880px, calc(100% - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+}
+
+.bubi-devlog-modal::backdrop {
+  background: rgba(3, 7, 11, .84);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.bubi-devlog-modal[open] {
+  display: grid;
+  place-items: center;
+}
+
+.bubi-devlog-modal__shell {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 80% 0, rgba(255, 156, 42, .13), transparent 34%),
+    rgba(10, 16, 22, .80);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, .52);
+  backdrop-filter: blur(22px) saturate(135%);
+  -webkit-backdrop-filter: blur(22px) saturate(135%);
+}
+
+.bubi-devlog-modal__head {
+  padding: clamp(22px, 3vw, 34px) clamp(20px, 3vw, 34px) 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.bubi-devlog-modal__head h3 {
+  max-width: 620px;
+  margin: 0;
+  color: var(--text);
+  font: 700 clamp(31px, 4vw, 52px)/1.02 "Space Grotesk", sans-serif;
+  letter-spacing: -.06em;
+}
+
+.bubi-devlog-modal__head p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.bubi-devlog-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 50%;
+  background: rgba(8, 12, 16, .72);
+  color: #f2f5f6;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+  transition: transform .2s, border-color .2s, color .2s;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bubi-devlog-modal__close:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+.bubi-devlog-modal__scroll {
+  position: relative;
+  max-height: min(58dvh, 560px);
+  overflow-y: auto;
+  padding: 18px clamp(20px, 3vw, 34px) 24px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 156, 42, .55) transparent;
+  overscroll-behavior: auto;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 26px, #000 calc(100% - 64px), transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 26px, #000 calc(100% - 64px), transparent 100%);
+}
+
+.bubi-devlog-modal__scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bubi-devlog-modal__scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bubi-devlog-modal__scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 156, 42, .45);
+}
+
+.bubi-devlog-list {
+  position: relative;
+  display: grid;
+  gap: 0;
+}
+
+.bubi-devlog-list::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 5px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--line) 10%, var(--line) 90%, transparent);
+}
+
+.bubi-devlog-entry {
+  position: relative;
+  min-height: 78px;
+  padding: 14px 0 16px 30px;
+}
+
+.bubi-devlog-entry + .bubi-devlog-entry {
+  border-top: 1px solid rgba(255, 255, 255, .055);
+}
+
+.bubi-devlog-entry::before {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: 1px;
+  z-index: 1;
+  width: 9px;
+  height: 9px;
+  border: 2px solid #0a1016;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px rgba(255, 156, 42, .55);
+}
+
+.bubi-devlog-entry__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.bubi-devlog-entry__meta span {
+  width: fit-content;
+  padding: 4px 7px;
+  border: 1px solid rgba(255, 156, 42, .22);
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(255, 156, 42, .07);
+  font-size: 9px;
+}
+
+.bubi-devlog-entry__content h4 {
+  margin: 0 0 5px;
+  color: var(--text);
+  font: 700 18px/1.16 "Space Grotesk", sans-serif;
+  letter-spacing: -.035em;
+}
+
+.bubi-devlog-entry__content p,
+.bubi-devlog-empty {
+  max-width: 680px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+.bubi-devlog-empty {
+  padding: 18px 0;
+}
+
+html.theme-light .bubi-development-card {
+  border-color: rgba(28, 39, 48, .10);
+  background:
+    radial-gradient(circle at 10% 0, rgba(216, 120, 19, .13), transparent 30%),
+    linear-gradient(145deg, rgba(255, 255, 255, .78), rgba(255, 255, 255, .44));
+  box-shadow: 0 24px 55px rgba(44, 55, 62, .10);
+}
+
+html.theme-light .bubi-development-card::before {
+  border-color: rgba(28, 39, 48, .09);
+}
+
+html.theme-light .bubi-development-card__text,
+html.theme-light .bubi-development-progress-title,
+html.theme-light .bubi-devlog-modal__head p:not(.eyebrow),
+html.theme-light .bubi-devlog-entry__content p,
+html.theme-light .bubi-devlog-empty {
+  color: #586671;
+}
+
+html.theme-light .bubi-development-more {
+  border-color: rgba(28, 39, 48, .10);
+  background: rgba(255, 255, 255, .62);
+  color: #1c2730;
+  box-shadow: 0 12px 30px rgba(44, 55, 62, .08);
+}
+
+html.theme-light .bubi-development-more:hover {
+  border-color: rgba(216, 120, 19, .28);
+  background: rgba(255, 156, 42, .10);
+  color: #1c2730;
+  box-shadow: 0 16px 36px rgba(216, 120, 19, .12);
+}
+
+html.theme-light .bubi-development-progress__bar {
+  border-color: rgba(28, 39, 48, .10);
+  background: rgba(28, 39, 48, .075);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .38);
+}
+
+html.theme-light .bubi-development-card__art {
+  border-color: rgba(28, 39, 48, .10);
+  background: #fff;
+}
+
+html.theme-light .bubi-devlog-modal__shell {
+  border-color: rgba(28, 39, 48, .14);
+  background:
+    radial-gradient(circle at 80% 0, rgba(216, 120, 19, .12), transparent 34%),
+    rgba(255, 255, 255, .80);
+  box-shadow: 0 28px 90px rgba(44, 55, 62, .28);
+}
+
+html.theme-light .bubi-devlog-modal__head,
+html.theme-light .bubi-devlog-entry + .bubi-devlog-entry {
+  border-color: rgba(28, 39, 48, .08);
+}
+
+html.theme-light .bubi-devlog-entry::before {
+  border-color: #fff;
+}
+
+html.theme-light .bubi-devlog-modal__close {
+  border-color: rgba(28, 39, 48, .14);
+  background: rgba(255, 255, 255, .82);
+  color: #1c2730;
+}
+
+@media (max-width: 900px) {
+  .bubi-development-card {
+    grid-template-columns: 1fr;
+  }
+
+  .bubi-development-card__art {
+    min-height: 300px;
+    order: -1;
+  }
+
+  .bubi-development-card__art img {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 680px) {
+  .bubi-development-section {
+    padding-top: 28px;
+    padding-bottom: 30px;
+  }
+
+  .bubi-development-card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .bubi-development-card__art {
+    min-height: 230px;
+    border-radius: 15px;
+  }
+
+  .bubi-development-card__art img {
+    min-height: 230px;
+  }
+
+  .bubi-development-card__title {
+    font-size: 32px;
+  }
+
+  .bubi-development-more {
+    width: 100%;
+  }
+
+  .bubi-devlog-modal {
+    width: min(100% - 18px, 880px);
+    max-height: calc(100dvh - 18px);
+  }
+
+  .bubi-devlog-modal__shell {
+    border-radius: 16px;
+  }
+
+  .bubi-devlog-modal__head {
+    padding: 22px 18px 14px;
+  }
+
+  .bubi-devlog-modal__head h3 {
+    max-width: calc(100% - 50px);
+    font-size: 31px;
+  }
+
+  .bubi-devlog-modal__scroll {
+    max-height: min(62dvh, 560px);
+    padding: 14px 18px 20px;
+  }
+
+  .bubi-devlog-entry {
+    min-height: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .bubi-devlog-entry__content h4 {
+    font-size: 17px;
+  }
+}
