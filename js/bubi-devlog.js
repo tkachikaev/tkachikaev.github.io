@@ -1,7 +1,9 @@
 (() => {
   const lang = document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "ru";
   const devlogEntries = Array.isArray(window.BubiDevlog?.[lang]) ? window.BubiDevlog[lang] : [];
-  const developmentData = window.BubiDevelopment?.[lang];
+  const developmentSource = window.BubiDevelopment || {};
+  const developmentData = developmentSource[lang];
+  const developmentCommon = developmentSource.common || {};
   const developmentTarget = document.querySelector("[data-bubi-development]");
   const devlogTarget = document.querySelector("[data-bubi-devlog-list]");
   const devlogModal = document.querySelector("[data-bubi-devlog-modal]");
@@ -12,6 +14,17 @@
     const number = Number(value);
     if (!Number.isFinite(number)) return 0;
     return Math.max(0, Math.min(100, Math.round(number)));
+  }
+
+  function getProgressRows() {
+    if (Array.isArray(developmentCommon.progress)) {
+      return developmentCommon.progress.map(row => ({
+        title: developmentData?.progressLabels?.[row.id] || row.title || row.id || "",
+        value: row.value
+      }));
+    }
+
+    return Array.isArray(developmentData?.items) ? developmentData.items : [];
   }
 
   function renderDevelopment() {
@@ -39,7 +52,7 @@
     const list = document.createElement("div");
     list.className = "bubi-development-progress";
 
-    (developmentData.items || []).slice(0, 5).forEach(row => {
+    getProgressRows().slice(0, 5).forEach(row => {
       const value = clampProgress(row.value);
       const item = document.createElement("div");
       item.className = "bubi-development-progress__item";
@@ -67,15 +80,22 @@
     button.className = "bubi-development-more";
     button.type = "button";
     button.setAttribute("data-bubi-devlog-open", "");
-    button.innerHTML = `<span>${developmentData.detailsButton || "Devlog"}</span><b aria-hidden="true">→</b>`;
 
+    const buttonText = document.createElement("span");
+    buttonText.textContent = developmentData.detailsButton || "Devlog";
+
+    const buttonIcon = document.createElement("b");
+    buttonIcon.setAttribute("aria-hidden", "true");
+    buttonIcon.textContent = "→";
+
+    button.append(buttonText, buttonIcon);
     info.append(eyebrow, title, text, progressTitle, list, button);
 
     const art = document.createElement("figure");
     art.className = "bubi-development-card__art";
 
     const image = document.createElement("img");
-    image.src = developmentData.image || "assets/projects/bubi/bubi-worker.png";
+    image.src = developmentData.image || developmentCommon.image || "assets/projects/bubi/bubi-worker.png";
     image.alt = developmentData.imageAlt || "Bubi";
     image.loading = "lazy";
     image.decoding = "async";
