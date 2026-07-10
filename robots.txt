@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://booogz.su/sitemap.xml
+Sitemap: https://tkachikaev.github.io/sitemap.xml

@@ -2,24 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://booogz.su/</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://booogz.su/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://booogz.su/en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://booogz.su/"/>
+    <loc>https://tkachikaev.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tkachikaev.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tkachikaev.github.io/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tkachikaev.github.io/"/>
   </url>
   <url>
-    <loc>https://booogz.su/en.html</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://booogz.su/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://booogz.su/en.html"/>
+    <loc>https://tkachikaev.github.io/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tkachikaev.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tkachikaev.github.io/en.html"/>
   </url>
   <url>
-    <loc>https://booogz.su/bubi.html</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://booogz.su/bubi.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://booogz.su/bubi-en.html"/>
+    <loc>https://tkachikaev.github.io/bubi.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tkachikaev.github.io/bubi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tkachikaev.github.io/bubi-en.html"/>
   </url>
   <url>
-    <loc>https://booogz.su/bubi-en.html</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://booogz.su/bubi.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://booogz.su/bubi-en.html"/>
+    <loc>https://tkachikaev.github.io/bubi-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tkachikaev.github.io/bubi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tkachikaev.github.io/bubi-en.html"/>
   </url>
 </urlset>
