@@ -2,24 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://timur.dev/</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://timur.dev/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://timur.dev/en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://timur.dev/"/>
+    <loc>https://booogz.su/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://booogz.su/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booogz.su/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://booogz.su/"/>
   </url>
   <url>
-    <loc>https://timur.dev/en.html</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://timur.dev/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://timur.dev/en.html"/>
+    <loc>https://booogz.su/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://booogz.su/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booogz.su/en.html"/>
   </url>
   <url>
-    <loc>https://timur.dev/bubi.html</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://timur.dev/bubi.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://timur.dev/bubi-en.html"/>
+    <loc>https://booogz.su/bubi.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://booogz.su/bubi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booogz.su/bubi-en.html"/>
   </url>
   <url>
-    <loc>https://timur.dev/bubi-en.html</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://timur.dev/bubi.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://timur.dev/bubi-en.html"/>
+    <loc>https://booogz.su/bubi-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://booogz.su/bubi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://booogz.su/bubi-en.html"/>
   </url>
 </urlset>

@@ -1,5 +1,5 @@
 /* Entry point for the shared site styles. */
-@import url("tokens.css");
-@import url("header.css");
-@import url("home.css");
-@import url("motion.css");
+@import url("tokens.css?v=2");
+@import url("header.css?v=2");
+@import url("home.css?v=2");
+@import url("motion.css?v=2");

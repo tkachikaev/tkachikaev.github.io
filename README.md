@@ -1,4 +1,4 @@
-# timur.dev
+# booogz.su
 
 Личный статический сайт независимого разработчика игр Тимура Качаева.
 
@@ -191,8 +191,8 @@ js/projects-data.js
 ```text
 assets/projects/bubi/cover.jpg     — основная обложка Bubi
 assets/projects/bubi/logo.webp     — логотип Bubi
-assets/site/avatar.png             — фото на главной
-assets/site/campfire.jpg           — баннер с костром
+assets/site/avatar.webp            — аватарка на главной
+assets/site/campfire.webp          — баннер с костром
 assets/social/site-og.jpg          — превью главной при отправке ссылки
 assets/social/bubi-og.jpg          — превью страницы Bubi при отправке ссылки
 ```
@@ -259,7 +259,7 @@ assets/social/bubi-og.jpg
 CSS и JavaScript подключаются с версией, например:
 
 ```html
-<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="stylesheet" href="css/style.css?v=8">
 <script src="js/projects-data.js?v=1"></script>
 ```
 

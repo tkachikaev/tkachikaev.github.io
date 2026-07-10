@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://timur.dev/sitemap.xml
+Sitemap: https://booogz.su/sitemap.xml

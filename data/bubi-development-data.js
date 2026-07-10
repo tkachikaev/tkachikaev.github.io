@@ -1,6 +1,6 @@
 window.BubiDevelopment = {
   common: {
-    image: "assets/projects/bubi/bubi-worker.png",
+    image: "assets/projects/bubi/bubi-worker.webp",
     progress: [
       { id: "block1", value: 28 },
       { id: "block2", value: 61 },
@@ -19,9 +19,9 @@ window.BubiDevelopment = {
     progressLabels: {
       block1: "Персонаж",
       block2: "Первый уровень",
-      block3: "Слайм Враг",
-      block4: "Кусач Враг",
-      block5: "Игра"
+      block3: "Слайм",
+      block4: "Кусач",
+      block5: "Игровая сборка"
     },
     detailsButton: "Подробнее о разработке",
     modalEyebrow: "ДЕВЛОГ",
@@ -30,17 +30,17 @@ window.BubiDevelopment = {
   },
   en: {
     eyebrow: "IN DEVELOPMENT",
-    title: "Bubi is built block by block.",
+    title: "Bubi is building his world.",
     text: "A compact project status: what is being assembled now, what already works, and which parts are slowly becoming a playable game.",
     imageAlt: "Bubi wearing a construction helmet and building a game level",
     imageCaption: "Work-in-progress build",
     progressTitle: "Current tasks",
     progressLabels: {
-      block1: "Block 1",
-      block2: "Block 2",
-      block3: "Block 3",
-      block4: "Block 4",
-      block5: "Block 5"
+      block1: "Character",
+      block2: "First level",
+      block3: "Slime",
+      block4: "Biter",
+      block5: "Playable build"
     },
     detailsButton: "More about development",
     modalEyebrow: "DEVLOG",

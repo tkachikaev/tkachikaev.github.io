@@ -95,7 +95,7 @@
     art.className = "bubi-development-card__art";
 
     const image = document.createElement("img");
-    image.src = developmentData.image || developmentCommon.image || "assets/projects/bubi/bubi-worker.png";
+    image.src = developmentData.image || developmentCommon.image || "assets/projects/bubi/bubi-worker.webp";
     image.alt = developmentData.imageAlt || "Bubi";
     image.loading = "lazy";
     image.decoding = "async";
