@@ -1,0 +1,2 @@
+GitHub Pages redeploy trigger.
+Custom domain disabled; expected URL: https://tkachikaev.github.io/
